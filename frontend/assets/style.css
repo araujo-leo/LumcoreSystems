@@ -25,12 +25,12 @@
     width: 100%;
 }
 
-#body{
-    padding-top: 30vh;
+section{
+    padding-top: 10vh;
 }
 
-.badge{
-    border-radius: 10px !important;
+.navbar{
+    transition: 0.2s ease-in-out;
 }
 
 /* UTILIDADES */
@@ -57,8 +57,12 @@
 
 .img-temp-profile{
     width: 200px;
-    height: 300px;
+    height: 250px;
     background-color: white;
+}
+
+.badge{
+    border-radius: 10px !important;
 }
 
 /* HOME */
