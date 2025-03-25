@@ -29,8 +29,18 @@ section{
     padding-top: 10vh;
 }
 
+@media (min-width: 1024px) {
+    section {
+        height: 100vh;
+    }
+}  
+
 .navbar{
     transition: 0.2s ease-in-out;
+}
+
+h1{
+    width: auto;
 }
 
 /* UTILIDADES */
@@ -57,17 +67,39 @@ section{
 
 .img-temp-profile{
     width: 200px;
-    height: 250px;
-    background-color: white;
+    height: 275px;
+    border: 2px solid gray;
+    border-radius: 15px;
 }
 
 .badge{
     border-radius: 10px !important;
 }
 
+.rounded-left{
+    border-radius: 0 !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.rounded-right{
+    border-radius: 0 !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+.rounded-full{
+    border-radius: 10px !important; 
+}
+
 /* HOME */
+#sobre-btn{
+    border-radius: 25px;
+}
 #sobre-btn:hover{
-    background-color: rgba(0, 0, 0, .25)
+    background-color: white;
+    color: black !important;
+    transition: 0.2s;
 }
 
 /* SOBRE */
@@ -104,4 +136,39 @@ section{
     background: #f62622;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 100%;
+}
+
+/* EQUIPE */
+
+/* SERVIÇOS */
+.custom-bg {
+    background: 
+        linear-gradient(rgba(100, 0, 100, 0.9), rgba(75, 0, 125, 0.5)), 
+        url("img/universebackground.jpg") fixed center;
+    background-size: cover;
+    background-position: center;
+    padding: 15vh;
+}
+
+/* CONTATO */
+.form-label{
+    font-weight: bold;
+    font-size: large;
+}
+
+.form-control{
+    background-color: rgba(255,255,255,0.1) !important;
+    border: 2px solid #515151 !important;
+    color: white !important;
+}
+
+.form-control::placeholder{
+    color: rgba(255,255,255,0.4) !important;
+}
+
+.margin-left{
+    margin-left: 10vw !important;
+}
+.margin-right{
+    margin-right: 10vw !important;
 }
