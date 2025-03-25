@@ -43,6 +43,15 @@ h1{
     width: auto;
 }
 
+.next-section{
+    transition: 0.2s;
+}
+
+.ocultar-mobile:hover .next-section{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
 /* UTILIDADES */
 .no-underline{
     text-decoration: none !important;
@@ -139,6 +148,13 @@ h1{
 }
 
 /* EQUIPE */
+.social-icon{
+    width: 15px;
+    height: 15px;
+    background-color: red; /* cor temporaria, remover depois de colocar os icones*/
+    padding: 7px; /* remover depois */
+    margin: 2px;
+} 
 
 /* SERVIÇOS */
 .custom-bg {
@@ -171,4 +187,11 @@ h1{
 }
 .margin-right{
     margin-right: 10vw !important;
+}
+
+.nome-input{
+    padding-right: calc(var(--bs-gutter-x) * .2) !important;
+}
+.sobrenome-input{
+    padding-left: calc(var(--bs-gutter-x) * .2) !important;
 }
