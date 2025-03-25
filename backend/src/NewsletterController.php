@@ -32,7 +32,8 @@ class NewsletterController {
             $data = [
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => 'Seja bem-vindo ao canal de notícias da Lumcore Systems.',
-                'company' => 'Lumcore Systems'
+                'company' => 'Lumcore Systems',
+                'unsubscribe_button' => '<hr><a href="127.0.0.1/unsubscribe?email=' . $email . '">Cancelar inscrição</a>' //organizar aqui
             ];
     
             // Instanciar o objeto Mailer
@@ -68,16 +69,19 @@ class NewsletterController {
 
     public function sendNews($subject, $body) {
         $conn = $this->db->getConnection();
-        $stmt = $conn->query("SELECT email, nome FROM newsletter");
+        $stmt = $conn->query("SELECT email, nome FROM newsletter --  WHERE bloqueioemail=1 ");
     
         $mailer = new Mailer();
         $errors = [];
     
-        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+        $rows = $stmt->fetchAll();
+        foreach($rows as $row) {
             $data = [
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => $body,
-                'company' => 'Lumcore Systems'  
+                'company' => 'Lumcore Systems',
+                'unsubscribe_button' => '<hr><a href="https://example.com/unsubscribe?email=' . urlencode($row['email']) . '">Cancelar inscrição</a>'
+
             ];
     
             if (!$mailer->send($row['email'], $subject, $data, $row['nome'])) {

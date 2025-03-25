@@ -12,7 +12,9 @@ class ContactController {
         $data = [
             'header' => 'Confirmação de envio de mensagem',
             'message' => $body,
-            'company' => 'Lumcore Systems'
+            'company' => 'Lumcore Systems',
+            'unsubscribe_button' => ''
+
         ];
 
         return $mailer->send($email, $data['header'], $data, $name) ? 
