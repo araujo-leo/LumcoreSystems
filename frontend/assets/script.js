@@ -72,11 +72,12 @@ $(document).ready(function () {
     $(window).resize(adjustDivForMobile);
 
 
+    //Quando usuário aperta espaço pula pro sobrenome
     let inputNome = $('#input-nome');
     let inputSobrenome = $('#input-sobrenome');
     let text = '';
 
-    inputNome.keyup(function (event) {
+    inputNome.keydown(function (event) {
         inputNome.val(inputNome.val().replace(/\s/g, ""));
         if (event.key === " ") {
             inputSobrenome.focus();
@@ -84,7 +85,8 @@ $(document).ready(function () {
         }
     });
 
-    inputSobrenome.keyup(function (event){
+    //Se usuário apaga todo o sobrenome volta pro nome
+    inputSobrenome.keydown(function (event){
         if(event.key === "Backspace"){
             if(inputSobrenome.val() === ""){
                 inputNome.focus();
