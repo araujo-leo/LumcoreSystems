@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-transparent fixed-top p-0">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-transparent fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand d-none" href="#">LumCore</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
     </section>
 
     <class id="body" class="bg-black d-flex justify-content-center text-white flex-column">
-        <section id="sobre" class="d-flex flex-column justify-content-center ">
+        <section id="sobre" class="d-flex flex-column justify-content-center">
             <div id="sobre-main" class="ms-5 px-5">
                 <h1 class="py-2 title">Sobre Nós</h1>
                 <h5 class="w-75">Uma empresa formada a partir da vontade de superar as expectativas, sempre buscando a qualidade em tudo  que fazemos, assim garantimos que você não receba um <span class="text-danger">Error 404.</span></h5>
@@ -44,12 +44,12 @@
                     <a class="text-white mx-3" href="#equipe">Conheça nosso time</a>
                 </div>
             </div> 
-            <div class="ms-5 px-5 mx-5 pt-5 pb-4 text-secondary">
+            <div class="ms-5 px-5 mx-5 pb-2 text-secondary">
                 Trabalhamos com o seguinte em mente:
             </div>
             <div id="mvv" class="d-flex flex-row mt-3">
                 <div id="mvv-div" class="row">
-                    <div class="col col-md-3 text-center mvv d-flex flex-column align-items-center">
+                    <div class="col text-center mvv d-flex flex-column align-items-center">
                         <h3 id="missao">Missão</h3>
                         <img src="" alt="" class="img-temp my-2">
                         <p>Entregar soluções digitais eficientes</p>
@@ -59,7 +59,7 @@
                         <img src="" alt="" class="img-temp my-2">
                         <p>Ser referência em desenvolvimento para pequenos negócios e empreendedores</p>
                     </div>
-                    <div class="col col-md-4 text-center mvv d-flex flex-column align-items-center">
+                    <div class="col text-center mvv d-flex flex-column align-items-center">
                         <h3 id="valores">Valores</h3>
                         <img src="" alt="" class="img-temp my-2">
                         <p>Comprometimento, inovação, transparência e trabalho em equipe.</p>
@@ -70,8 +70,8 @@
         <section id="equipe" class="text-center d-flex flex-column justify-content-center align-items-center">
             <h1 class="title me-auto ms-auto">Nossa Equipe</h1>
             <div class="container-fluid mt-5">
-                <div id="equipe-desktop" class="row">
-                    <div class="col p-0">
+                <div id="equipe-desktop" class="row d-flex flex-row justify-content-center">
+                    <div class="col-3 p-0">
                         <img src="assets/img/araujoperfil.jpeg" alt="" class="img-temp-profile mb-3">
                         <h5 class="mb-1">Fernando Rodrigues Pinto</h5>
                         <p class="text-primary mb-1">Developer Frontend</p>
@@ -81,7 +81,7 @@
                             <a href="" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
                         </div>
                     </div>
-                    <div class="col p-0">
+                    <div class="col-3 p-0">
                         <img src="assets/img/araujoperfil.jpeg" alt="" class="img-temp-profile mb-3">
                         <h5 class="mb-1">Ezequiel Melo Nogueira</h5>
                         <p class="text-primary mb-1">Developer Backend</p>
@@ -91,7 +91,7 @@
                             <a href="" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
                         </div>
                     </div>
-                    <div class="col p-0">
+                    <div class="col-3 p-0">
                         <img src="assets/img/araujoperfil.jpeg" alt="" class="img-temp-profile mb-3">
                         <h5 class="mb-1">Leonardo Araujo Fernandes</h5>
                         <p class="text-primary mb-1">Developer Backend</p>
@@ -106,13 +106,13 @@
         </section>
         <section id="servicos" class="text-center d-flex flex-column justify-content-center align-items-center">
             <h1 class="title">Serviços</h1>
-            <div class="row mt-3 pb-4 px-0 mx-0 d-flex gap-0 gx-0 justify-content-center">
-                <div class="col-5 d-flex flex-column align-items-center">
+            <div class="row mt-3 pb-4 px-1 mx-1 d-flex justify-content-center">
+                <div class="col-12 col-md-5 d-flex flex-column align-items-center my-2">
                     <h2 class="text-primary">Websites Personalizados</h2>
                     <img src="" alt="" class="img-temp mb-3"> <!-- ICONE -->
                     <p class="w-50">Desenvolvemos sites modernos, responsivos e otimizados, adaptados às necessidades do seu negócio.</p>
                 </div>
-                <div class="col-5 d-flex flex-column align-items-center">
+                <div class="col-12 col-md-5 d-flex flex-column align-items-center my-2">
                     <h2 class="text-primary">Sistemas de Gestão</h2>
                     <img src="" alt="" class="img-temp mb-3"> <!-- ICONE -->
                     <p class="w-50">Criamos sistemas para automatizar processos, aumentar a eficiência e facilitar a gestão da sua empresa.</p>
@@ -125,14 +125,14 @@
         </section>
         <section id="contato" class="d-flex align-items-center">
             <div class="row mx-0 px-0 d-flex justify-content-center align-items-center">
-                <div class="col me-3 margin-left">
+                <div id="contato-main" class="col me-3 margin-left">
                     <h1 class="title">Nos Contate</h1>
-                    <p class="w-75">Fale conosco! Envie uma mensagem pelo formulário ao lado ou, se preferir, entre em contato diretamente pelo telefone ou e-mail</p>
-                    <div class="container d-flex flex-row p-1">
+                    <p class="w-75">Fale conosco! Envie uma mensagem pelo formulário a seguir ou, se preferir, entre em contato diretamente pelo telefone ou e-mail</p>
+                    <div class="contato-info container d-flex flex-row p-1">
                         <i class="fa-solid fa-phone fa-lg me-2" style="color: #FFD43B;"></i>
                         <p class="m-0">11 98303-2910</p>
                     </div>
-                    <div class="container d-flex flex-row p-1">
+                    <div class="contato-info container d-flex flex-row p-1">
                         <i class="fa-solid fa-envelope fa-lg me-2" style="color: #FFD43B;"></i>
                         <p class="m-0">lumcoresystem@gmail.com</p>
                     </div>

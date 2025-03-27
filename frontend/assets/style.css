@@ -26,18 +26,18 @@
 }
 
 section{
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 60px;
 }
 
 @media (min-width: 1024px) {
     #sobre, #equipe, #servicos, #contato {
-        max-height: none;
+        min-height: 100vh;
     }
 }  
 
 .navbar{
     transition: 0.3s ease-in-out;
+    padding: 10px !important;
 }
 
 .nav-link{
@@ -114,8 +114,8 @@ h1{
 }
 
 .img-temp-profile{
-    width: 200px;
-    height: 275px;
+    width: 36vh;
+    height: 50vh;
     border: 2px solid gray;
     border-radius: 15px;
 }
@@ -152,9 +152,17 @@ h1{
 }
 
 /* SOBRE */
+#sobre{
+    padding-top: calc(2rem + 60px);
+    margin-top: 5px;
+}
 
 #sobre-main{
     width: 80%;
+}
+
+#sobre .text-secondary{
+    padding-top: 1rem;
 }
 
 @media (min-width: 1024px) {
@@ -163,6 +171,9 @@ h1{
     }
     #sobre-main{
         width: 60%;
+    }
+    #sobre .text-secondary{
+        padding-top: 3rem;
     }
 }  
 
@@ -174,6 +185,7 @@ h1{
 
 .mvv, .mvv-start{
     margin-bottom: 2rem;
+    width: 75%;
 }
 
 
@@ -182,7 +194,7 @@ h1{
         padding-left: 2rem;
     }
     #mvv-div{
-        width: 50%;
+        width: 65%;
         margin-left: 4rem;
     }
 }  
@@ -268,6 +280,10 @@ h1{
 }
 .sobrenome-input{
     padding-left: calc(var(--bs-gutter-x) * .2) !important;
+}
+
+#contato-main{
+    margin-bottom: 2rem;
 }
 
 /* footer */
