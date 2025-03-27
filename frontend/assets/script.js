@@ -55,7 +55,7 @@ $(document).ready(function () {
             $('#mvv-div').removeClass('row');
 
             $('#equipe-desktop').hide();
-        } else{
+        } else {
             $('.ocultar-mobile').addClass('d-flex').show();
             $('#sobre-main').addClass('ms-5 px-5').removeClass('text-center');
             $('.text-secondary').addClass('ms-5 px-5').removeClass('text-center');
@@ -66,8 +66,32 @@ $(document).ready(function () {
             $('#equipe-desktop').show();
         }
     }
-    
+
     // Chamar a função no carregamento da página e quando a janela for redimensionada
     adjustDivForMobile();
     $(window).resize(adjustDivForMobile);
+
+
+    let inputNome = $('#input-nome');
+    let inputSobrenome = $('#input-sobrenome');
+    let text = '';
+
+    inputNome.keyup(function (event) {
+        inputNome.val(inputNome.val().replace(/\s/g, ""));
+        if (event.key === " ") {
+            console.log(inputNome.val());
+            inputSobrenome.focus();
+            event.preventDefault();
+        }
+    });
+
+    inputSobrenome.keyup(function (event){
+        if(event.key === "Backspace"){
+            console.log("backspace");
+            if(inputSobrenome.val() === ""){
+                console.log("teste");
+            }
+        }
+    })
+
 });
