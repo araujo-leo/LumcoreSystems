@@ -153,11 +153,37 @@ h1{
 
 /* SOBRE */
 
+#sobre-main{
+    width: 80%;
+}
+
+@media (min-width: 1024px) {
+    #sobre h1, #sobre h5{
+        padding-left: 1.5rem;
+    }
+    #sobre-main{
+        width: 60%;
+    }
+}  
+
 #missao, #visao, #valores {
     color: #fff;
     display: inline-block;
     position: relative;
 }
+
+.mvv, .mvv-start{
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .mvv{
+        padding-left: 2rem;
+    }
+    .mvv-start{
+        padding-left: 3rem !important;
+    }
+}  
 
 #missao:after {
     background: none repeat scroll 0 0 transparent;
@@ -240,4 +266,61 @@ h1{
 }
 .sobrenome-input{
     padding-left: calc(var(--bs-gutter-x) * .2) !important;
+}
+
+/* footer */
+
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 0 10px 0;
+}
+
+.subscribe{
+    font-size: 12px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.footer-links a, .footer-info p {
+    color: #bbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+.footer-links a:hover {
+    color: #fff;
+}
+.social-icons a {
+    color: #bbb;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+.social-icons a:hover {
+    color: #6f42c1;
+}
+.subscribe input {
+    background: transparent;
+    border: 1px solid #6f42c1;
+    color: #fff;
+}
+.subscribe input::placeholder {
+    color: #bbb;
+}
+.subscribe button {
+    background-color: #6f42c1;
+    border: none;
+    color: #fff;
+}
+.subscribe button:hover {
+    background-color: #59339d;
+}
+
+@media (max-width: 768px){
+    footer{
+        text-align:center;
+    }
 }
