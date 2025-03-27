@@ -26,13 +26,13 @@
 }
 
 section{
-    padding-top: 40px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 @media (min-width: 1024px) {
     #sobre, #equipe, #servicos, #contato {
-        min-height: 100vh;
-        max-height: 150vh;
+        max-height: none;
     }
 }  
 
@@ -176,12 +176,14 @@ h1{
     margin-bottom: 2rem;
 }
 
+
 @media (min-width: 1024px) {
     .mvv{
         padding-left: 2rem;
     }
-    .mvv-start{
-        padding-left: 3rem !important;
+    #mvv-div{
+        width: 50%;
+        margin-left: 4rem;
     }
 }  
 
