@@ -79,7 +79,6 @@ $(document).ready(function () {
     inputNome.keyup(function (event) {
         inputNome.val(inputNome.val().replace(/\s/g, ""));
         if (event.key === " ") {
-            console.log(inputNome.val());
             inputSobrenome.focus();
             event.preventDefault();
         }
@@ -87,9 +86,8 @@ $(document).ready(function () {
 
     inputSobrenome.keyup(function (event){
         if(event.key === "Backspace"){
-            console.log("backspace");
             if(inputSobrenome.val() === ""){
-                console.log("teste");
+                inputNome.focus();
             }
         }
     })
