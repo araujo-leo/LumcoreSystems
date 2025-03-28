@@ -54,9 +54,9 @@ $(document).ready(function () {
             $('#mvv').removeClass('flex-row').addClass('flex-column align-items-center');
             $('#mvv-div').removeClass('row').addClass('d-flex flex-column align-items-center');
             $('#contato-main').removeClass('me-3 margin-left').addClass('text-center d-flex flex-column justify-content-center align-items-center');
-            $('.contato-info').addClass('justify-content-center')
+            $('.contato-info').addClass('justify-content-center');
+            $('#form-div').removeClass('ms-3 margin-right').addClass('d-flex flex-column justify-content-center align-items-center')
 
-            $('#equipe-desktop').removeClass('d-flex').hide();
         } else {
             $('.ocultar-mobile').addClass('d-flex').show();
             $('#sobre-main').addClass('ms-5 px-5').removeClass('text-center d-flex flex-column justify-content-center align-items-center');
@@ -65,16 +65,16 @@ $(document).ready(function () {
             $('#mvv').addClass('flex-row').removeClass('flex-column align-items-center');
             $('#mvv-div').addClass('row').removeClass('d-flex flex-column align-items-center');
             $('#contato-main').addClass('me-3 margin-left').removeClass('text-center d-flex flex-column justify-content-center align-items-center');
-            $('.contato-info').removeClass('justify-content-center')
+            $('.contato-info').removeClass('justify-content-center');
+            $('#form-div').addClass('ms-3 margin-right').removeClass('d-flex flex-column justify-content-center align-items-center')
 
-            $('#equipe-desktop').addClass('d-flex').show();
         }
     }
 
     // Chamar a função no carregamento da página e quando a janela for redimensionada
     adjustDivForMobile();
     $(window).resize(adjustDivForMobile);
-    
+
     let inputNome = $('#input-nome');
     let inputSobrenome = $('#input-sobrenome');
     let text = '';
