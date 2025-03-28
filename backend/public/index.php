@@ -4,6 +4,8 @@
 require __DIR__ . '/../vendor/autoload.php';
 use App\ContactController;
 use App\NewsletterController;
+use App\AuthMiddleware;
+
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -12,6 +14,7 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
+
 
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -43,21 +46,21 @@ switch ($_GET['route']) {
         echo json_encode($contact->sendConfirmation($data['email'], $data['name']));
         break;
 
-        case 'subscribe':
-            if (!isset($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                echo json_encode(["success" => false, "message" => "E-mail inválido."]);
-                exit;
-            }
-        
-            if (!isset($data['name']) || empty(trim($data['name']))) {
-                echo json_encode(["success" => false, "message" => "Nome é obrigatório."]);
-                exit;
-            }
-            $newsletter = new NewsletterController();
-            echo json_encode($newsletter->subscribe($data['email'], $data['name']));
-            break;
+    case 'subscribe':
+        if (!isset($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            echo json_encode(["success" => false, "message" => "E-mail inválido."]);
+            exit;
+        }
+
+        if (!isset($data['name']) || empty(trim($data['name']))) {
+            echo json_encode(["success" => false, "message" => "Nome é obrigatório."]);
+            exit;
+        }
+        $newsletter = new NewsletterController();
+        echo json_encode($newsletter->subscribe($data['email'], $data['name']));
+        break;
     case 'unsubscribe':
-        if(!isset($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+        if (!isset($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             echo json_encode(["sucess" => false, "message" => "E-mail inválido."]);
             exit;
         }
@@ -66,13 +69,36 @@ switch ($_GET['route']) {
         break;
 
     case 'send-news':
+        $headers = apache_request_headers();
+        $token = isset($headers['Authorization']) ? str_replace('Bearer ', '', $headers['Authorization']) : null;
+
+        if (!isset($token) && $token != '') {
+            echo json_encode(["success" => false, "message" => "Credenciais são exigidas!"]);
+            exit;
+        }
+
+        if(empty($token)) {
+            echo json_encode(["success" => false, "message" => "Credenciais são exigidas!"]);
+            exit;
+        }
+
         if (!isset($data['subject']) || !isset($data['body'])) {
             echo json_encode(["success" => false, "message" => "Assunto e mensagem são obrigatórios."]);
             exit;
         }
-        $newsletter = new NewsletterController();
-        echo json_encode($newsletter->sendNews($data['subject'], $data['body']));
-        break;
+
+        $authMiddleware = new AuthMiddleware();
+        $authResult = $authMiddleware->verifyToken($token);
+        if ($authResult) {
+            $storeLogNews = $authMiddleware->logNews($authResult['adminName'], $data['subject'], $data['body']);
+            if ($storeLogNews['success'] == true) {
+                $newsletter = new NewsletterController();
+                echo json_encode($newsletter->sendNews($data['subject'], $data['body']));
+                break;
+            }
+        }
+
+
 
     default:
         echo json_encode(["success" => false, "message" => "Rota inválida."]);
