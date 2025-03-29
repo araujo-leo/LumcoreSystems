@@ -96,4 +96,40 @@ $(document).ready(function () {
         }
     })
 
+    //conectando com api contact
+    const contactForm = $('#contact-form');
+    contactForm.submit(function(event) {
+        event.preventDefault(); 
+    
+        let nome = $('#input-nome').val() + ' ' + $('#input-sobrenome').val(); 
+        let email = $('#input-email').val();
+        let mensagem = $('txt-mensagem').val();
+
+        try {
+            fetch('http://localhost:8000/index.php?route=contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({ name: nome, email: email }) 
+            })  
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erro HTTP! Código: ${response.status}`);
+                }
+                return response.json();
+            }) 
+            .then(data => {
+                console.log(data);
+                alert("Mensagem enviada com sucesso!"); 
+            }) 
+            .catch(error => console.error('Erro na requisição:', error)); 
+        } catch (error) {
+            console.log("Erro no try-catch:", error);
+        }
+        
+    });
+        
+    
+
 });
