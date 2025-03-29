@@ -88,9 +88,9 @@ $(document).ready(function () {
     });
 
     //Se usuário apaga todo o sobrenome volta pro nome
-    inputSobrenome.keydown(function (event){
-        if(event.key === "Backspace"){
-            if(inputSobrenome.val() === ""){
+    inputSobrenome.keydown(function (event) {
+        if (event.key === "Backspace") {
+            if (inputSobrenome.val() === "") {
                 inputNome.focus();
             }
         }
@@ -100,48 +100,98 @@ $(document).ready(function () {
     const contactForm = $('#contact-form');
     const submitButton = contactForm.find('button[type="submit"]');
 
-    contactForm.submit(function(event) {
-        event.preventDefault(); 
-        const originalButtonText = submitButton.html(); 
+    contactForm.submit(function (event) {
+        event.preventDefault();
+        const originalButtonText = submitButton.html();
 
         submitButton.prop('disabled', true).html(`<i class="fa fa-spinner fa-spin"></i> Enviando...`);
 
-    
-        let nome = $('#input-nome').val() + ' ' + $('#input-sobrenome').val(); 
+
+        let nome = $('#input-nome').val() + ' ' + $('#input-sobrenome').val();
         let email = $('#input-email').val();
         let mensagem = $('txt-mensagem').val();
 
-        try {
+        try {            
+
             fetch('http://localhost:8000/index.php?route=contact', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json' 
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name: nome, email: email }) 
-            })  
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Erro HTTP! Código: ${response.status}`);
-                }
-                return response.json();
-            }) 
-            .then(data => {
-                console.log(data);
+                body: JSON.stringify({ name: nome, email: email })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP! Código: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
 
-                alert(data['message']); 
-            }) 
-            .catch(error =>
-                 console.error('Erro na requisição:', error
-                 ))
-            .finally(() => {
-                submitButton.prop('disabled', false).html(originalButtonText);
-            });
+                    alert(data['message']);
+                })
+                .catch(error =>
+                    console.error('Erro na requisição:', error
+                    ))
+                .finally(() => {
+                    submitButton.prop('disabled', false).html(originalButtonText);
+                });
         } catch (error) {
             console.log("Erro no try-catch:", error);
         }
-        
+
     });
-        
-    
+
+    //unsubscribe
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    var email = getUrlParameter('unsubscribe');
+
+    if (email) {
+         // Esconder todos os elementos do body
+         const bodyElements = $('body').children();
+         bodyElements.each(function() {
+            $(this).addClass('d-none');
+        });
+ 
+         // Mostrar o carregamento
+         const loading = $('#loading');
+         loading.removeClass('d-none');
+
+
+        try {
+            fetch('http://localhost:8000/index.php?route=unsubscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP! Código: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+
+                    alert(data['message']);
+
+                    window.location.replace('/');
+                })
+                .catch(error =>
+                    console.error('Erro na requisição:', error
+                    ));
+        } catch (error) {
+            console.log("Erro no try-catch:", error);
+        }
+
+    };
+
 
 });
