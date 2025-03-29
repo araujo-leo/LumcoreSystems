@@ -98,8 +98,14 @@ $(document).ready(function () {
 
     //conectando com api contact
     const contactForm = $('#contact-form');
+    const submitButton = contactForm.find('button[type="submit"]');
+
     contactForm.submit(function(event) {
         event.preventDefault(); 
+        const originalButtonText = submitButton.html(); 
+
+        submitButton.prop('disabled', true).html(`<i class="fa fa-spinner fa-spin"></i> Enviando...`);
+
     
         let nome = $('#input-nome').val() + ' ' + $('#input-sobrenome').val(); 
         let email = $('#input-email').val();
@@ -121,9 +127,15 @@ $(document).ready(function () {
             }) 
             .then(data => {
                 console.log(data);
-                alert("Mensagem enviada com sucesso!"); 
+
+                alert(data['message']); 
             }) 
-            .catch(error => console.error('Erro na requisição:', error)); 
+            .catch(error =>
+                 console.error('Erro na requisição:', error
+                 ))
+            .finally(() => {
+                submitButton.prop('disabled', false).html(originalButtonText);
+            });
         } catch (error) {
             console.log("Erro no try-catch:", error);
         }
