@@ -18,13 +18,29 @@ class NewsletterController
         $email = strtolower(trim($email));
 
         try {
-            $stmt = $conn->prepare("SELECT COUNT(*) FROM newsletter WHERE email = :email");
+            $stmt = $conn->prepare(query: "SELECT COUNT(*) FROM newsletter WHERE email = :email");
             $stmt->bindParam(':email', $email);
             $stmt->execute();
             $count = $stmt->fetchColumn();
 
             if ($count > 0) {
-                return ["success" => false, "message" => "Este e-mail já está cadastrado!"];
+                $stmt = $conn->prepare(query: "SELECT * FROM newsletter WHERE email = :email");
+                $stmt->bindParam(':email', $email);
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+
+                if (!empty($result)) {
+                    if ($result[0]['status'] == 0) {
+                        $updateStmt = $conn->prepare("UPDATE newsletter SET status = 1 WHERE email = :email");
+                        $updateStmt->bindParam(':email', $email);
+                        $updateStmt->execute();
+
+                        return ["success" => true, "message" => "Cadastro feito na newsletter!"];
+                    } else {
+                        // Se o status já for 1
+                        return ["success" => false, "message" => "Este e-mail já está cadastrado na newsletter!"];
+                    }
+                }
             }
 
             $stmt = $conn->prepare("INSERT INTO newsletter (email, nome, status) VALUES (:email, :nome, 1)");
@@ -36,7 +52,7 @@ class NewsletterController
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => 'Seja bem-vindo ao canal de notícias da Lumcore Systems.',
                 'company' => 'Lumcore Systems',
-                'unsubscribe_button' => '<hr><a href="127.0.0.1/unsubscribe?email=' . $email . '">Cancelar inscrição</a>' //organizar aqui
+                'unsubscribe_button' => '<hr><a href="127.0.0.1/?unsubscribe=' . $email . '">Cancelar inscrição</a>' //organizar aqui
             ];
 
             // Instanciar o objeto Mailer
@@ -72,33 +88,36 @@ class NewsletterController
     }
 
     public function sendNews($subject, $body)
-
     {
+        // Obtém a conexão com o banco de dados
         $conn = $this->db->getConnection();
-        $stmt = $conn->query("SELECT email, nome, status FROM newsletter WHERE status =1 ");
+        // Consulta os dados da tabela 'newsletter'
+        $stmt = $conn->query("SELECT email, nome FROM newsletter WHERE status = 1");
 
+        // Instancia o Mailer para o envio de e-mails
         $mailer = new Mailer();
         $errors = [];
 
         $rows = $stmt->fetchAll();
-        
+
         foreach ($rows as $row) {
             $data = [
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => $body,
                 'company' => 'Lumcore Systems',
-                'unsubscribe_button' => '<hr><a href="https://example.com/unsubscribe?email=' . urlencode($row['email']) . '">Cancelar inscrição</a>'
-
+                'unsubscribe_button' => '<hr><a href="http://localhost:5500/?unsubscribe=' . $row['email'] . '">Cancelar inscrição</a>'
             ];
 
-            if (!$mailer->send($row['email'], $subject, $data, $row['nome'])) {
-                $errors[] = $row['email'];
-            }
+            $result = $mailer->send($row['email'], $subject, $data, $row['nome']);
 
+            if ($result !== true) {
+                $errors[] = $row['email'];  
+            }
         }
 
-        return empty($errors) ?
-            ["success" => true, "message" => "Newsletter enviada para todos os e-mails!"] :
-            ["success" => false, "message" => "Erro ao enviar para: " . implode(', ', $errors)];
+        return empty($errors)
+            ? ["success" => true, "message" => "Newsletter enviada para todos os e-mails!"]
+            : ["success" => false, "message" => "Erro ao enviar para: " . implode(', ', $errors)];
     }
+
 }

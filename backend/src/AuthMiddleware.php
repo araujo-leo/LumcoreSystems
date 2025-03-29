@@ -8,7 +8,7 @@ class AuthMiddleware
 
     public function __construct()
     {
-        $this->db = new Database(); // Cria a conexão com o banco da mesma forma que na NewsletterController
+        $this->db = new Database();
     }
 
     private static $validAdminTokens = [
