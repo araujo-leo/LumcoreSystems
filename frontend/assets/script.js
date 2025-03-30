@@ -115,7 +115,7 @@ $(document).ready(function () {
         }
     })
 
-    //conectando com api contact
+    //contact
     const contactForm = $('#contact-form');
     const submitButton = contactForm.find('button[type="submit"]');
 
@@ -212,5 +212,49 @@ $(document).ready(function () {
 
     };
 
+    //subscribe
+    const subscribeForm= $('#subscribe-form');
+    const submitSubscribeButton = subscribeForm.find('button[type="submit"]');
+
+    subscribeForm.submit(function (event) {
+        event.preventDefault();
+        const originalButtonText = submitSubscribeButton.html();
+
+        submitSubscribeButton.prop('disabled', true).html(`<i class="fa fa-spinner fa-spin"></i> Enviando...`);
+
+
+        let email = $('#input-email').val();
+
+        try {            
+
+            fetch('http://localhost:8000/index.php?route=subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP! Código: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+
+                    alert(data['message']);
+                })
+                .catch(error =>
+                    console.error('Erro na requisição:', error
+                    ))
+                .finally(() => {
+                    submitSubscribeButton.prop('disabled', false).html(originalButtonText);
+                });
+        } catch (error) {
+            console.log("Erro no try-catch:", error);
+        }
+
+    });
 
 });
