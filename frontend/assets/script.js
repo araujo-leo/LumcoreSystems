@@ -222,8 +222,7 @@ $(document).ready(function () {
 
         submitSubscribeButton.prop('disabled', true).html(`<i class="fa fa-spinner fa-spin"></i> Enviando...`);
 
-
-        let email = $('#input-email').val();
+        let email = $('#subscribe-email').val();
 
         try {            
 
