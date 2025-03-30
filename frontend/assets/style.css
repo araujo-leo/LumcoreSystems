@@ -26,12 +26,15 @@
 }
 
 section{
-    padding-top: 60px;
+    padding-top: 10vh;
 }
 
 @media (min-width: 1024px) {
     #sobre, #equipe, #servicos, #contato {
         min-height: 100vh;
+    }
+    section{
+        padding-top: 60px;
     }
 }  
 
@@ -255,7 +258,25 @@ h1{
     border: 2px solid gray;
 }
 
+@media (min-width: 768px) {
+    .profile{
+        width: 14vh;
+        height: 20vh;
+        border: 2px solid gray;
+        border-radius: 15px;
+    }
+}  
+
 @media (min-width: 1024px) {
+    .profile{
+        width: 18vh;
+        height: 25vh;
+        border: 2px solid gray;
+        border-radius: 15px;
+    }
+}  
+
+@media (min-width: 1440px) {
     .profile{
         width: 36vh;
         height: 50vh;
@@ -316,6 +337,9 @@ h1{
     width: 100%;
     margin-bottom: 2rem;
 }
+#contact-div{
+    width: 75% !important;
+}
 
 @media (min-width: 1024px) {
     #form{
@@ -352,15 +376,6 @@ footer {
 .footer-links a:hover {
     color: #fff;
 }
-.social-icons a {
-    color: #bbb;
-    font-size: 1.2rem;
-    margin-right: 10px;
-    transition: color 0.3s;
-}
-.social-icons a:hover {
-    color: #6f42c1;
-}
 .subscribe input {
     background: transparent;
     border: 1px solid #6f42c1;
@@ -380,6 +395,6 @@ footer {
 
 @media (max-width: 768px){
     footer{
-        text-align:center;
+        text-align: center;
     }
 }

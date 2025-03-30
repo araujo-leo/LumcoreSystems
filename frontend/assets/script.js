@@ -46,7 +46,20 @@ $(document).ready(function () {
 
     // RESPONSIVIDADE
     function adjustDivForMobile() {
-        if ($(window).width() <= 1024) { // Defina o tamanho para considerar 'mobile'
+        if ($(window).width() < 850) { 
+            $('.servico-info').removeClass('col-md-5').addClass('col-md-6')
+
+        } else {
+            $('.servico-info').addClass('col-md-5').removeClass('col-md-6')
+
+        }        if ($(window).width() < 850) { 
+            $('.servico-info').removeClass('col-md-5').addClass('col-md-6')
+
+        } else {
+            $('.servico-info').addClass('col-md-5').removeClass('col-md-6')
+
+        }
+        if ($(window).width() < 1024) { 
             $('.ocultar-mobile').removeClass('d-flex').hide();
             $('#sobre-main').removeClass('ms-5 px-5').addClass('text-center d-flex flex-column justify-content-center align-items-center');
             $('.text-secondary').removeClass('ms-5 px-5').addClass('text-center');
@@ -55,8 +68,11 @@ $(document).ready(function () {
             $('#mvv-div').removeClass('row').addClass('d-flex flex-column align-items-center');
             $('#contato-main').removeClass('me-3 margin-left').addClass('text-center d-flex flex-column justify-content-center align-items-center');
             $('.contato-info').addClass('justify-content-center');
-            $('#form-div').removeClass('ms-3 margin-right').addClass('d-flex flex-column justify-content-center align-items-center')
+            $('#form-div').removeClass('ms-3 margin-right').addClass('d-flex flex-column justify-content-center align-items-center');
+            $('#contact-div').removeClass('ms-3 margin-right');
 
+            $('#footer-links').hide();
+            $('#footer-links-mobile').show();
         } else {
             $('.ocultar-mobile').addClass('d-flex').show();
             $('#sobre-main').addClass('ms-5 px-5').removeClass('text-center d-flex flex-column justify-content-center align-items-center');
@@ -66,8 +82,11 @@ $(document).ready(function () {
             $('#mvv-div').addClass('row').removeClass('d-flex flex-column align-items-center');
             $('#contato-main').addClass('me-3 margin-left').removeClass('text-center d-flex flex-column justify-content-center align-items-center');
             $('.contato-info').removeClass('justify-content-center');
-            $('#form-div').addClass('ms-3 margin-right').removeClass('d-flex flex-column justify-content-center align-items-center')
+            $('#form-div').addClass('ms-3 margin-right').removeClass('d-flex flex-column justify-content-center align-items-center');
+            $('#contact-div').addClass('ms-3 margin-right');
 
+            $('#footer-links').show();
+            $('#footer-links-mobile').hide();
         }
     }
 

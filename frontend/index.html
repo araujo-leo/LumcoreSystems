@@ -115,12 +115,12 @@
         <section id="servicos" class="text-center d-flex flex-column justify-content-center align-items-center">
             <h1 class="title">Serviços</h1>
             <div class="row mt-3 pb-4 px-1 mx-1 d-flex justify-content-center">
-                <div class="col-12 col-md-5 d-flex flex-column align-items-center my-5">
+                <div class="servico-info col-12 col-md-5 d-flex flex-column align-items-center my-5">
                     <h2 class="text-primary">Websites Personalizados</h2>
                     <img src="" alt="" class="img-temp mb-3"> <!-- ICONE -->
                     <p class="w-50">Desenvolvemos sites modernos, responsivos e otimizados, adaptados às necessidades do seu negócio.</p>
                 </div>
-                <div class="col-12 col-md-5 d-flex flex-column align-items-center my-5">
+                <div class="servico-info col-12 col-md-5 d-flex flex-column align-items-center my-5">
                     <h2 class="text-primary">Sistemas de Gestão</h2>
                     <img src="" alt="" class="img-temp mb-3"> <!-- ICONE -->
                     <p class="w-50">Criamos sistemas para automatizar processos, aumentar a eficiência e facilitar a gestão da sua empresa.</p>
@@ -132,7 +132,7 @@
             </div>
         </section>
         <section id="contato" class="d-flex align-items-center">
-            <div class="row mx-0 px-0 d-flex justify-content-center align-items-center">
+            <div id="form-div" class="row mx-0 px-0 d-flex justify-content-center align-items-center">
                 <div id="contato-main" class="col me-3 margin-left">
                     <h1 class="title">Nos Contate</h1>
                     <p class="w-75">Fale conosco! Envie uma mensagem pelo formulário a seguir ou, se preferir, entre em contato diretamente pelo telefone ou e-mail</p>
@@ -145,7 +145,7 @@
                         <p class="m-0">lumcoresystem@gmail.com</p>
                     </div>
                 </div>
-                <div class="col ms-3 margin-right">
+                <div id="contact-div" class="col ms-3 margin-right">
                     <form id="contact-form">
                         <div class="mb-3">
                             <label class="form-label">Identificação</label>
@@ -179,7 +179,7 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md">
                         <h2 class="footer-logo">LumCore</h2>
                         <p>Av. Salgado Filho, 3501</p>
                         <p>Centro, Guarulhos - SP</p>
@@ -187,16 +187,32 @@
                         <p>Telefone: +55 94002 8922</p>
                         <p>Email: <a href="mailto:lumcoresystems@gmail.com">lumcoresystems@gmail.com</a></p>
                     </div>
+
+                    <div id="footer-links-mobile" class="col-md">
+                        <h5>Links Importantes</h5>
+                        <p><a href="#home">Home</a></p>
+                        <p><a href="#sobre">Sobre</a></p>
+                        <p><a href="#equipe">Equipe</a></p>
+                        <p><a href="#servicos">Serviços</a></p>
+                        <p><a href="#contato">Contato</a></p>
+                    </div>
         
-                   
-        
-                    <div class="col-md-3">
+                    <div class="col-md text-center">
                         <h5>Receba nossas notícias!</h5>
                         <p class="subscribe">Inscreva seu email e receba novidades exclusivas, incluindo promoções e eventos da empresa!</p>
                         <div class="subscribe">
                             <input type="email" class="form-control mb-2" placeholder="Seu e-mail">
                             <button class="btn w-100">Inscreva-se</button>
                         </div>
+                    </div>
+
+                    <div id="footer-links" class="col-md text-end">
+                        <h5>Links Importantes</h5>
+                        <p><a href="#home">Home</a></p>
+                        <p><a href="#sobre">Sobre</a></p>
+                        <p><a href="#equipe">Equipe</a></p>
+                        <p><a href="#servicos">Serviços</a></p>
+                        <p><a href="#contato">Contato</a></p>
                     </div>
                 </div>
                 <div class="row">
