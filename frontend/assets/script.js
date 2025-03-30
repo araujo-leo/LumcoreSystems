@@ -212,6 +212,20 @@ $(document).ready(function () {
 
     };
 
+    function RevealFunction(){
+        window.sr = ScrollReveal({duration: 900, distance: '50px', easing: 'ease-out', origin:'bottom'});
+
+        sr.reveal('#sobre-main,.text-secondary,#equipe-title,#servicos-title,#contato-text,#contact-div',{interval:450});
+        sr.reveal('.mvv',{interval:350,distance:'100px',delay:750});
+
+        sr.reveal('.perfil',{interval:350,distance:'100px',delay:750});
+
+        sr.reveal('.servico-info',{distance:'100px',delay:750});
+        
+        sr.reveal('.contato-info',{interval:350,delay:450});
+    }
+
+    RevealFunction()
     //subscribe
     const subscribeForm= $('#subscribe-form');
     const submitSubscribeButton = subscribeForm.find('button[type="submit"]');
