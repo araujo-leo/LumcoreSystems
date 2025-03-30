@@ -12,7 +12,7 @@ class NewsletterController
         $this->db = new Database();
     }
 
-    public function subscribe($email, $name)
+    public function subscribe($email, $name='')
     {
         $conn = $this->db->getConnection();
         $email = strtolower(trim($email));
@@ -48,14 +48,13 @@ class NewsletterController
             $stmt->bindParam(':nome', $name);
             $stmt->execute();
 
-            $data = [
+            $data = [   
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => 'Seja bem-vindo ao canal de notícias da Lumcore Systems.',
                 'company' => 'Lumcore Systems',
-                'unsubscribe_button' => '<hr><a href="127.0.0.1/?unsubscribe=' . $email . '">Cancelar inscrição</a>' //organizar aqui
+                'unsubscribe_button' => '<hr><a href="localhost:5500/?unsubscribe=' . $email . '">Cancelar inscrição</a>' 
             ];
 
-            // Instanciar o objeto Mailer
             $mailer = new Mailer();
 
             if ($mailer->send($email, $data['header'], $data, $name)) {

@@ -43,9 +43,13 @@ class Mailer
 
             $template = str_replace("{{name}}", $name, $template);
 
+            if (empty(trim($name))) {
+                $template = str_replace("Olá, <strong></strong>!", "Olá!", $template);
+            }
+
             foreach ($data as $key => $value) {
                 $template = str_replace("{{{$key}}}", $value, $template);
-            }
+            }   
 
             $this->mail->clearAddresses();
 

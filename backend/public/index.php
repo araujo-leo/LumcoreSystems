@@ -18,6 +18,7 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 $data = json_decode(file_get_contents('php://input'), true);
 
+
 // Depuração: Verifica se a requisição POST chegou corretamente
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(["success" => false, "message" => "Método não permitido."]);
@@ -47,17 +48,19 @@ switch ($_GET['route']) {
         break;
 
     case 'subscribe':
-        if (!isset($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+        
+        $email = isset($data['email']) ? trim($data['email']) : '';
+        
+        if(!isset($data['name']) || empty(trim($data['name']))) {
+            $data['name'] = "";
+        }
+        if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo json_encode(["success" => false, "message" => "E-mail inválido."]);
             exit;
         }
 
-        if (!isset($data['name']) || empty(trim($data['name']))) {
-            echo json_encode(["success" => false, "message" => "Nome é obrigatório."]);
-            exit;
-        }
         $newsletter = new NewsletterController();
-        echo json_encode($newsletter->subscribe($data['email'], $data['name']));
+        echo json_encode($newsletter->subscribe($email, $data['name']));
         break;
     case 'unsubscribe':
         if (!isset($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
