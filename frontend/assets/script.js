@@ -70,6 +70,7 @@ $(document).ready(function () {
             $('.contato-info').addClass('justify-content-center');
             $('#form-div').removeClass('ms-3 margin-right').addClass('d-flex flex-column justify-content-center align-items-center');
             $('#contact-div').removeClass('ms-3 margin-right');
+            $('#contato-text').addClass('d-flex flex-column align-items-center');
 
             $('#footer-links').hide();
             $('#footer-links-mobile').show();
@@ -84,6 +85,8 @@ $(document).ready(function () {
             $('.contato-info').removeClass('justify-content-center');
             $('#form-div').addClass('ms-3 margin-right').removeClass('d-flex flex-column justify-content-center align-items-center');
             $('#contact-div').addClass('ms-3 margin-right');
+            $('#contato-text').removeClass('d-flex flex-column align-items-center');
+
 
             $('#footer-links').show();
             $('#footer-links-mobile').hide();
