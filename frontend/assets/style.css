@@ -151,7 +151,7 @@ h1{
 
 /* HOME */
 #home{
-    background: radial-gradient(circle,rgba(205,120,0) 100%, rgba(0,0,0) 10%);
+    background: radial-gradient(circle,rgba(205,120,0) 10%, rgba(0,0,0) 100%);
 }
 
 #sobre-btn{
