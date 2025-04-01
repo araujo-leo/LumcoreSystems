@@ -26,7 +26,7 @@
     </div>
     <nav class="navbar navbar-dark navbar-expand-lg bg-transparent fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand d-none" href="#">LumCore</a>
+            <a class="navbar-brand d-none" href="#"><img src="assets/img/logo_branca-03.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -44,9 +44,9 @@
     </nav>
 
     <section id="home" class="vh-100 d-flex justify-content-center flex-column text-center align-items-center p-0 m-0">
-        <h1 class="text-white">LumCore Systems</h1>
-        <a id="sobre-btn" href="#sobre" class="transparent-btn no-underline border border-2 py-2 px-5 text-white">VEJA
-            MAIS</a>
+        <img id="logo-central" src="assets/img/logo_branca-03.png" alt="">
+        <!-- <a id="sobre-btn" href="#sobre" class="transparent-btn no-underline border border-2 py-2 px-5 text-white">VEJA MAIS
+        </a> -->
     </section>
 
     <class id="body" class="bg-black d-flex justify-content-center text-white flex-column">
@@ -54,12 +54,13 @@
             <div id="sobre-main" class="ms-5 px-5">
                 <h1 class="py-2 title">Sobre Nós</h1>
                 <h5 class="w-75">Uma empresa formada a partir da vontade de superar as expectativas, sempre buscando a
-                    qualidade em tudo que fazemos, assim garantimos que você não receba um <span
-                        class="text-danger">Error 404.</span></h5>
+                    qualidade em tudo que fazemos, assim garantimos que você não receba um <span class="text-danger">Error 404.</span></h5>
                 <div class="ocultar-mobile container px-5 py-3 d-flex align-items-center">
-                    <a href="#equipe"><span
-                            class="next-section circle bg-warning d-flex align-items-center justify-content-center"><i
-                                class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></a>
+                    <a href="#equipe">
+                        <span class="next-section circle bg-warning d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-arrow-right" style="color: #000000;"></i>
+                        </span>
+                    </a>
                     <a class="text-white mx-3" href="#equipe">Conheça nosso time</a>
                 </div>
                 <img class="img-paisagem-mobile" src="assets/img/backgroundpaisagem3.jpeg" alt="">
@@ -70,18 +71,18 @@
             <div id="mvv" class="d-flex flex-row mt-3">
                 <div id="mvv-div" class="row">
                     <div id="missao-div" class="col text-center mvv d-flex flex-column align-items-center">
-                        <h3 id="missao">Missão</h3>
-                        <img src="assets/img/valores.png" alt="" class="img-temp my-2">
+                        <h3 class="mvv-element mb-0">Missão</h3>
+                        <img src="assets/img/missao.png" alt="">
                         <p>Entregar soluções digitais eficientes</p>
                     </div>
                     <div id="visao-div" class="col col-md-5 text-center mvv d-flex flex-column align-items-center">
-                        <h3 id="visao">Visão</h3>
-                        <img src="" alt="" class="img-temp my-2">
+                        <h3 class="mvv-element mb-0">Visão</h3>
+                        <img src="assets/img/visao.png" alt="">
                         <p>Ser referência em desenvolvimento para pequenos negócios e empreendedores</p>
                     </div>
                     <div id="valores-div" class="col text-center mvv d-flex flex-column align-items-center">
-                        <h3 id="valores">Valores</h3>
-                        <img src="" alt="" class="img-temp my-2">
+                        <h3 class="mvv-element mb-0">Valores</h3>
+                        <img src="assets/img/valores.png">
                         <p>Comprometimento, inovação, transparência e trabalho em equipe.</p>
                     </div>
                 </div>
@@ -172,30 +173,28 @@
                             <label class="form-label">Identificação</label>
                             <div class="row">
                                 <div class="col-4 col-md-4 nome-input">
-                                    <input id="input-nome" type="text" class="form-control rounded-left"
-                                        placeholder="Nome">
+                                    <input id="input-nome" type="text" class="form-control rounded-left" placeholder="Nome">
                                 </div>
                                 <div class="col-8 col-md-8 sobrenome-input">
-                                    <input id="input-sobrenome" type="text" class="form-control rounded-right"
-                                        placeholder="Sobrenome">
+                                    <input id="input-sobrenome" type="text" class="form-control rounded-right" placeholder="Sobrenome">
                                 </div>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input id="input-email" type="email" class="form-control rounded-full" id="email"
-                                placeholder="Digite seu email">
+                            <input id="input-email" type="email" class="form-control rounded-full" id="email" placeholder="Digite seu email">
                         </div>
 
                         <div class="mb-3">
                             <label for="mensagem" class="form-label">Mensagem</label>
-                            <textarea id="txt-mensagem" class="form-control rounded-full" id="mensagem" rows="4"
-                                placeholder="Digite sua mensagem"></textarea>
+                            <textarea id="txt-mensagem" class="form-control rounded-full" id="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Enviar
-                            Mensagem</button>
+                        <button type="submit" class="btn btn-purple">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Enviar Mensagem
+                        </button>
                     </form>
                 </div>
             </div>
@@ -204,8 +203,7 @@
 
         <footer>
             <div class="container">
-                <div class="row">">
-                    <h5>Receba nossas notícias!</h5>
+                <div id="footer-row" class="row">
                     <div class="col-md">
                         <h2 class="footer-logo">LumCore</h2>
                         <p>Av. Salgado Filho, 3501</p>
@@ -215,14 +213,14 @@
                         <p>Email: <a href="mailto:lumcoresystems@gmail.com">lumcoresystems@gmail.com</a></p>
                     </div>
         
-                    <div class="col-md text-center mt-4">
+                    <div class="col-md text-center mt-4 d-flex flex-column align-items-center justify-content-center w-75">
                         <h5>Receba nossas notícias!</h5>
                         <p class="subscribe">Inscreva seu email e receba novidades exclusivas, incluindo promoções e
                             eventos da empresa!</p>
                         <div class="subscribe mt-4">
                             <form id="subscribe-form" class="input-group">
                                 <input id="subscribe-email"type="email" class="form-control pb-2" placeholder="Seu e-mail">
-                                <button type="submit" class="btn">Inscreva-se</button>
+                                <button type="submit" class="btn btn-purple">Inscreva-se</button>
                             </form>
                         </div>
                     </div>
@@ -246,10 +244,10 @@
     </class>
 
     <script src="assets/script.js"></script>
-    <script src="vendor/fontawesome/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4dd379c198.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -71,6 +71,7 @@ $(document).ready(function () {
             $('#form-div').removeClass('ms-3 margin-right').addClass('d-flex flex-column justify-content-center align-items-center');
             $('#contact-div').removeClass('ms-3 margin-right');
             $('#contato-text').addClass('d-flex flex-column align-items-center');
+            $('#footer-row').addClass('d-flex flex-column align-items-center');
 
             $('#footer-links').hide();
             $('.img-paisagem').hide();
@@ -87,6 +88,7 @@ $(document).ready(function () {
             $('#form-div').addClass('ms-3 margin-right').removeClass('d-flex flex-column justify-content-center align-items-center');
             $('#contact-div').addClass('ms-3 margin-right');
             $('#contato-text').removeClass('d-flex flex-column align-items-center');
+            $('#footer-row').removeClass('d-flex flex-column align-items-center');
 
 
             $('#footer-links').show();
