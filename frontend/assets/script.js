@@ -133,7 +133,7 @@ $(document).ready(function () {
 
         let nome = $('#input-nome').val() + ' ' + $('#input-sobrenome').val();
         let email = $('#input-email').val();
-        let mensagem = $('txt-mensagem').val();
+        let mensagem = $('#txt-mensagem').val();
 
         try {            
 

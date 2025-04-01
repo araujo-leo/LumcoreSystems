@@ -213,7 +213,7 @@ h1{
     content: "";
     display: block;
     height: 3px;
-    background: #a9e600;
+    background: linear-gradient(rgba(255,0,255));
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 100%;
 }
