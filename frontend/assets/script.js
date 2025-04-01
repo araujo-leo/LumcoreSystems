@@ -142,7 +142,7 @@ $(document).ready(function () {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name: nome, email: email })
+                body: JSON.stringify({ name: nome, email: email, message: mensagem})
             })
                 .then(response => {
                     if (!response.ok) {
