@@ -14,7 +14,7 @@ class ContactController
         $this->db = new Database();
     }
 
-    public function sendConfirmation($email, $name)
+    public function sendConfirmation($email, $name, $userMessage)
     {
         $conn = $this->db->getConnection();
         $email = strtolower(trim($email));
@@ -50,6 +50,7 @@ class ContactController
             $subjectUser = '=?UTF-8?B?' . base64_encode($data['header']) . '?=';
             $userEmailSent = $mailer->send($email, $subjectUser, $data, $name);
 
+            $body = $userMessage;
             $adminEmail = "lumcore@gmail.com"; 
             $adminMessage = "
                 <h3>Nova mensagem recebida!</h3>

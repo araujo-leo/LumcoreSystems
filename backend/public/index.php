@@ -42,9 +42,15 @@ switch ($_GET['route']) {
             echo json_encode(["success" => false, "message" => "Nome é obrigatório."]);
             exit;
         }
+        
+
+         if (!isset($data['message']) || empty(trim($data['message']))) {
+            echo json_encode(["success" => false, "message" => "Mensagem é obrigatória."]);
+            exit;
+        } 
 
         $contact = new ContactController();
-        echo json_encode($contact->sendConfirmation($data['email'], $data['name']));
+        echo json_encode($contact->sendConfirmation($data['email'], $data['name'], $data['message']));
         break;
 
     case 'subscribe':
