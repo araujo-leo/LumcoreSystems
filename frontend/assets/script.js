@@ -139,7 +139,7 @@ $(document).ready(function () {
 
         try {            
 
-            fetch('http://localhost:8000/index.php?route=contact', {
+            fetch('https://talentosdoifsp.gru.br/LumcoreSystems/backend/public/?route=contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -190,7 +190,7 @@ $(document).ready(function () {
 
 
         try {
-            fetch('http://localhost:8000/index.php?route=unsubscribe', {
+            fetch('https://talentosdoifsp.gru.br/LumcoreSystems/backend/public/?route=unsubscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -248,7 +248,7 @@ $(document).ready(function () {
 
         try {            
 
-            fetch('http://localhost:8000/index.php?route=subscribe', {
+            fetch('https://talentosdoifsp.gru.br/LumcoreSystems/backend/public/?route=subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
