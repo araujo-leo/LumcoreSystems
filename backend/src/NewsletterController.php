@@ -52,7 +52,7 @@ class NewsletterController
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => 'Seja bem-vindo ao canal de notícias da Lumcore Systems.',
                 'company' => 'Lumcore Systems',
-                'unsubscribe_button' => '<hr><a href="http://localhost:5500/?unsubscribe=' . $email . '">Cancelar inscrição</a>'
+                'unsubscribe_button' => '<hr><a href="https://LumcoreSystems.talentosdoifsp.gru.br/?unsubscribe=' . $email . '">Cancelar inscrição</a>'
             ];
 
             $mailer = new Mailer();
@@ -104,7 +104,7 @@ class NewsletterController
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => $body,
                 'company' => 'Lumcore Systems',
-                'unsubscribe_button' => '<hr><a href="http://localhost:5500/?unsubscribe=' . $row['email'] . '">Cancelar inscrição</a>'
+                'unsubscribe_button' => '<hr><a href="https://LumcoreSystems.talentosdoifsp.gru.br/?unsubscribe=' . $row['email'] . '">Cancelar inscrição</a>'
             ];
 
             $result = $mailer->send($row['email'], $subject, $data, $row['nome']);
