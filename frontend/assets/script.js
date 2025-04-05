@@ -222,7 +222,7 @@ $(document).ready(function () {
     function RevealFunction(){
         window.sr = ScrollReveal({duration: 900, distance: '50px', easing: 'ease-out', origin:'bottom'});
 
-        sr.reveal('#sobre-main,.text-secondary,#equipe-title,#servicos-title,#contato-text,#contact-div',{interval:450});
+        sr.reveal('#sobre-main,.text-secondary,#equipe-title,#servicos-title,#servicos-text, #contato-text,#contact-div',{interval:450});
         sr.reveal('.mvv',{interval:350,distance:'100px',delay:750});
         sr.reveal('.img-paisagem',{interval:350,origin:'right'});
 
