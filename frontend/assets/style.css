@@ -91,15 +91,6 @@ h1{
     width: auto;
 }
 
-.next-section{
-    transition: 0.2s;
-}
-
-.ocultar-mobile:hover .next-section{
-    transform: scale(1.1);
-    transition: 0.2s;
-}
-
 a{
     text-decoration: none !important;
 }
@@ -142,23 +133,30 @@ a{
 .fa-lg{
     line-height: 1 !important;
 }
+
+.sobre-btn, .sobre-btn-blue{
+    border-radius: 25px;
+}
+
+.sobre-btn:hover{
+    background-color: white;
+    color: black !important;
+    transition: 0.4s;
+}
+.sobre-btn-blue:hover{
+    background-color: #0036e6;
+    border-color: #0036e6 !important;
+    transition: 0.4s;
+}
+
 /* HOME */
 #home{
     background-color: rgb(10, 10, 10);
 }
 
 #logo-central{
-    width: 200px;
+    width: 50vw;
     height: auto;
-}
-
-#sobre-btn{
-    border-radius: 25px;
-}
-#sobre-btn:hover{
-    background-color: white;
-    color: black !important;
-    transition: 0.2s;
 }
 
 /* SOBRE */
@@ -265,16 +263,16 @@ a{
 
 /* EQUIPE */
 #equipe .social-icon{
-    width: 20px !important;
-    height: 20px !important;
+    width: 25px !important;
+    height: 25px !important;
     margin-left: 5px;
     margin-right: 5px;
-    color: #FFD43B;
+    color: #547cff;
     transition: 0.2s;
     margin-bottom: 3rem;
 }
 #equipe .social-icon:hover{
-    color: #c7a732;
+    color: #0831b8;
     transition: 0.2s;
 }
 
@@ -381,7 +379,6 @@ a{
 /* footer */
 
 footer {
-    background-color: #111;
     color: #fff;
     padding: 40px 0 10px 0;
 }
@@ -405,19 +402,19 @@ footer {
 }
 .subscribe input {
     background: transparent;
-    border: 1px solid #6f42c1;
+    border: 1px solid #0036e6;
     color: #fff;
 }
 .subscribe input::placeholder {
     color: #bbb;
 }
 .btn-purple {
-    background-color: #6f42c1 !important;
+    background-color: #0036e6 !important;
     border: none !important;
     color: #fff !important;
 }
 .btn-purple:hover {
-    background-color: #59339d !important;
+    background-color: #0831b8 !important;
 }
 
 @media (max-width: 768px){
