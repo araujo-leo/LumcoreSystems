@@ -10,14 +10,20 @@ $(document).ready(function () {
 
         if (scrollPosition >= homeSection && scrollPosition < $('#sobre').offset().top) {
             navbar.removeClass('bg-dark').addClass('bg-transparent');
-            navbarBrand.addClass('d-none');
-            navbarToggler.addClass('d-none');
+            navbarBrand.hide();
+            navbarToggler.hide();
             navbarNav.addClass('me-auto');
+            if($(window).width() < 850) {
+                $('#nav-toggle').hide()
+            }
         } else {
             navbar.removeClass('bg-transparent').addClass('bg-dark');
-            navbarBrand.removeClass('d-none');
-            navbarToggler.removeClass('d-none');
+            navbarBrand.show();
+            navbarToggler.show();
             navbarNav.removeClass('me-auto');
+            if($(window).width() < 850) {
+                $('#nav-toggle').show()
+            }
         }
     }
 
@@ -76,6 +82,7 @@ $(document).ready(function () {
             $('#footer-links').hide();
             $('.img-paisagem').hide();
             $('.img-paisagem-mobile').show();
+            $('#logo-central-mobile').show();
         } else {
             $('.ocultar-mobile').addClass('d-flex').show();
             $('#sobre-main').addClass('ms-5 px-5').removeClass('text-center d-flex flex-column justify-content-center align-items-center');
@@ -94,6 +101,7 @@ $(document).ready(function () {
             $('#footer-links').show();
             $('.img-paisagem').show();
             $('.img-paisagem-mobile').hide();
+            $('#logo-central-mobile').hide();
         }
     }
 
