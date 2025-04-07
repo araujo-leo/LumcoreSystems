@@ -6,6 +6,10 @@
     font-style: normal;
 }
 
+body{
+    background-color: black !important;
+}
+
 .title {
     color: #fff;
     text-transform: uppercase;
@@ -168,6 +172,11 @@ a{
     border-color: #0036e6 !important;
     transition: 0.4s;
 }
+
+#site-content {
+    transition: opacity 1s ease;
+}
+
 
 /* HOME */
 #home{

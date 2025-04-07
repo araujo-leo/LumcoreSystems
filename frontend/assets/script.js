@@ -1,4 +1,28 @@
 $(document).ready(function () {
+    const scrollTop = $(window).scrollTop();
+
+    // Começa com scroll travado sem remover a barra
+    $('body').css({
+        position: 'fixed',
+        top: `-${scrollTop}px`,
+        width: '100%'
+    });
+
+    // Espera 1 segundo e então revela o site
+    setTimeout(function () {
+        $('#loading').addClass('d-none');
+        $('#site-content').css('opacity', '1');
+
+        // Libera o scroll
+        $('body').css({
+            position: '',
+            top: '',
+            width: ''
+        });
+        $(window).scrollTop(scrollTop);
+    }, 1000);
+
+
     // FUNÇÃO DE ATUALIZAR A NAVBAR AO SAIR DO HOME
     function updateNavbar() {
         var scrollPosition = $(window).scrollTop();

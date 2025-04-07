@@ -15,229 +15,231 @@
 </head>
 
 <body>
-    <div id="loading" class="d-none"
-        style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); color: white; text-align: center; display: flex; justify-content: center; align-items: center; z-index: 9999;">
+    <div id="loading" 
+        style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0); color: white; text-align: center; display: flex; justify-content: center; align-items: center; z-index: 9999;">
         <div>
-            <p>Estamos processando sua solicitação...</p>
             <div class="spinner-border text-light" role="status">
-                <span class="sr-only">Carregando...</span>
+                <span class="sr-only"></span>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-transparent fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="assets/img/logo_branca-03.png" alt=""></a>
-            <button id="nav-toggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav me-auto ms-auto align-items-start">
-                    <a class="nav-link m-2" href="#home">Home</a>
-                    <a class="nav-link m-2" href="#sobre">Sobre</a>
-                    <a class="nav-link m-2" href="#equipe">Equipe</a>
-                    <a class="nav-link m-2" href="#servicos">Serviços</a>
-                    <a class="nav-link m-2" href="#contato">Contatos</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <section id="home" class="vh-100 d-flex justify-content-center flex-column text-center align-items-center p-0 m-0">
-        <img id="logo-central" class="ocultar-mobile" src="assets/img/logo_completa_branca.png" alt="">
-        <img id="logo-central-mobile" src="assets/img/logo_branca-03.png" alt="">
-    </section>
-
-    <class id="body" class="bg-black d-flex justify-content-center text-white flex-column">
-        <section id="sobre" class="d-flex flex-column justify-content-center">
-            <div id="sobre-main" class="ms-5 px-5">
-                <h1 class="py-2 title">Sobre Nós</h1>
-                <h5 class="w-75">Uma empresa formada a partir da vontade de superar as expectativas, sempre buscando a
-                    qualidade em tudo que fazemos, assim garantimos que você não receba um <span class="text-danger">Error 404.</span></h5>
-                <div class="ocultar-mobile container px-4 py-3 d-flex align-items-center">
-                    <a href="#equipe" class="sobre-btn-blue transparent-btn no-underline border border-2 py-2 px-5 text-white">
-                        CONHEÇA NOSSO TIME
-                    </a>
-                </div>
-                <img class="img-paisagem-mobile" src="assets/img/backgroundpaisagem3.jpeg" alt="">
-            </div>
-            <div class="ms-5 px-5 mx-5 pb-2 text-secondary">
-                Trabalhamos com o seguinte em mente:
-            </div>
-            <div id="mvv" class="d-flex flex-row mt-3">
-                <div id="mvv-div" class="row">
-                    <div id="missao-div" class="col text-center mvv d-flex flex-column align-items-center">
-                        <h3 class="mvv-element mb-0">Missão</h3>
-                        <img src="assets/img/missao.png" alt="">
-                        <p>Entregar soluções digitais eficientes</p>
-                    </div>
-                    <div id="visao-div" class="col col-md-5 text-center mvv d-flex flex-column align-items-center">
-                        <h3 class="mvv-element mb-0">Visão</h3>
-                        <img src="assets/img/visao.png" alt="">
-                        <p>Ser referência em desenvolvimento para pequenos negócios e empreendedores</p>
-                    </div>
-                    <div id="valores-div" class="col text-center mvv d-flex flex-column align-items-center">
-                        <h3 class="mvv-element mb-0">Valores</h3>
-                        <img src="assets/img/valores.png">
-                        <p>Comprometimento, inovação, transparência e trabalho em equipe.</p>
+    <div id="site-content" style="opacity:0">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-transparent fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="assets/img/logo_branca-03.png" alt=""></a>
+                <button id="nav-toggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-auto ms-auto align-items-start">
+                        <a class="nav-link m-2" href="#home">Home</a>
+                        <a class="nav-link m-2" href="#sobre">Sobre</a>
+                        <a class="nav-link m-2" href="#equipe">Equipe</a>
+                        <a class="nav-link m-2" href="#servicos">Serviços</a>
+                        <a class="nav-link m-2" href="#contato">Contatos</a>
                     </div>
                 </div>
             </div>
-            <img class="img-paisagem" id="img-paisagem-1" src="assets/img/backgroundpaisagem3.jpeg" alt="">
-            <img class="img-paisagem" id="img-paisagem-2" src="assets/img/backgroundpaisagem.jpg" alt="">
+        </nav>
+    
+        <section id="home" class="vh-100 d-flex justify-content-center flex-column text-center align-items-center p-0 m-0">
+            <img id="logo-central" class="ocultar-mobile" src="assets/img/logo_completa_branca.png" alt="">
+            <img id="logo-central-mobile" src="assets/img/logo_branca-03.png" alt="">
         </section>
-        <section id="equipe" class="text-center d-flex flex-column justify-content-center align-items-center">
-            <h1 id="equipe-title" class="title me-auto ms-auto">Nossa Equipe</h1>
-            <div class="container-fluid mt-5">
-                <div id="equipe-main" class="row d-flex flex-row justify-content-center">
-                    <div class="col-10 col-md-3 p-0 perfil">
-                        <img src="assets/img/fernandoperfil.jpeg" alt="" class="profile mb-3">
-                        <h5 class="mb-1">Fernando Rodrigues Pinto</h5>
-                        <p class="text-primary mb-1">Developer Frontend</p>
-                        <div class="container d-flex justify-content-center flex-row mt-1 px-0">
-                            <a href="https://www.instagram.com/fernando_rodrigues_pinto/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                            <a href="https://github.com/fernando-rodrigues-pinto" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-github fa-xl"></i></a>
-                            <a href="https://www.linkedin.com/in/fernando-pinto-a8857235a/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-                        </div>
+    
+        <class id="body" class="bg-black d-flex justify-content-center text-white flex-column">
+            <section id="sobre" class="d-flex flex-column justify-content-center">
+                <div id="sobre-main" class="ms-5 px-5">
+                    <h1 class="py-2 title">Sobre Nós</h1>
+                    <h5 class="w-75">Uma empresa formada a partir da vontade de superar as expectativas, sempre buscando a
+                        qualidade em tudo que fazemos, assim garantimos que você não receba um <span class="text-danger">Error 404.</span></h5>
+                    <div class="ocultar-mobile container px-4 py-3 d-flex align-items-center">
+                        <a href="#equipe" class="sobre-btn-blue transparent-btn no-underline border border-2 py-2 px-5 text-white">
+                            CONHEÇA NOSSO TIME
+                        </a>
                     </div>
-                    <div class="col-10 col-md-3 p-0 perfil">
-                        <img src="assets/img/ezequiel_foto.jpg" alt="" class="profile mb-3">
-                        <h5 class="mb-1">Ezequiel Melo Nogueira</h5>
-                        <p class="text-primary mb-1">Developer Backend</p>
-                        <div class="container d-flex justify-content-center flex-row mt-1 px-0">
-                            <a href="https://www.instagram.com/zeknogueira/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                            <a href="https://github.com/zeknogueira" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-github fa-xl"></i></a>
-                            <a href="https://www.linkedin.com/in/zeknogueira/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                    <img class="img-paisagem-mobile" src="assets/img/backgroundpaisagem3.jpeg" alt="">
+                </div>
+                <div class="ms-5 px-5 mx-5 pb-2 text-secondary">
+                    Trabalhamos com o seguinte em mente:
+                </div>
+                <div id="mvv" class="d-flex flex-row mt-3">
+                    <div id="mvv-div" class="row">
+                        <div id="missao-div" class="col text-center mvv d-flex flex-column align-items-center">
+                            <h3 class="mvv-element mb-0">Missão</h3>
+                            <img src="assets/img/missao.png" alt="">
+                            <p>Entregar soluções digitais eficientes</p>
                         </div>
-                    </div>
-                    <div class="col-10 col-md-3 p-0 perfil">
-                        <img src="assets/img/araujoperfil.jpeg" alt="" class="profile mb-3">
-                        <h5 class="mb-1">Leonardo Araujo Fernandes</h5>
-                        <p class="text-primary mb-1">Developer Backend</p>
-                        <div class="container d-flex justify-content-center flex-row mt-1 px-0">
-                            <a href="https://www.instagram.com/leoaraujofernandes/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                            <a href="https://github.com/araujo-leo" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-github fa-xl"></i></a>
-                            <a href="https://www.linkedin.com/in/leonardoaraujofernandes/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                        <div id="visao-div" class="col col-md-5 text-center mvv d-flex flex-column align-items-center">
+                            <h3 class="mvv-element mb-0">Visão</h3>
+                            <img src="assets/img/visao.png" alt="">
+                            <p>Ser referência em desenvolvimento para pequenos negócios e empreendedores</p>
+                        </div>
+                        <div id="valores-div" class="col text-center mvv d-flex flex-column align-items-center">
+                            <h3 class="mvv-element mb-0">Valores</h3>
+                            <img src="assets/img/valores.png">
+                            <p>Comprometimento, inovação, transparência e trabalho em equipe.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="servicos" class="text-center d-flex flex-column justify-content-center align-items-center">
-            <h1 id="servicos-title" class="title">Serviços</h1>
-            <p id="servicos-text" class="w-50">Ao nos contratar, você conta com uma equipe comprometida em entregar soluções sob medida, exatamente como foi solicitado. Nossos diferenciais estão na aplicação de metodologias ágeis como XP e SCRUM, que garantem eficiência, transparência e entregas contínuas.</p>
-            <div class="row px-1 mx-1 d-flex justify-content-center">
-                <div class="servico-info col-12 col-md-5 d-flex flex-column align-items-center mt-4 mb-5">
-                    <h2 class="text-primary my-0">Websites Personalizados</h2>
-                    <i class="fa-solid fa-globe fa-5x my-3"></i>
-                    <p class="w-50">Desenvolvemos sites modernos, responsivos e otimizados, adaptados às necessidades do
-                        seu negócio.</p>
-                </div>
-                <div class="servico-info col-12 col-md-5 d-flex flex-column align-items-center mt-4 mb-5">
-                    <h2 class="text-primary my-0">Sistemas de Gestão</h2>
-                    <i class="fa-solid fa-laptop-code fa-5x my-3"></i>
-                    <p class="w-50">Criamos sistemas para automatizar processos, aumentar a eficiência e facilitar a
-                        gestão da sua empresa.</p>
-                </div>
-            </div>
-            <div class="container-fluid mt-3 custom-bg d-flex flex-column align-items-center">
-                <h1 class="mb-4">Atendemos suas necessidades?</h1>
-                <a href="#contato" class="sobre-btn transparent-btn no-underline border border-2 py-2 px-5 text-white">
-                    ENTRE EM CONTATO
-                </a>
-            </div>
-        </section>
-        <section id="contato" class="d-flex align-items-center">
-            <div id="form-div" class="row mx-0 px-0 d-flex justify-content-center align-items-center">
-                <div id="contato-main" class="col me-3 margin-left">
-                    <div id="contato-text" class="">
-                        <h1 class="title">Nos Contate</h1>
-                        <p class="w-75">Fale conosco! Envie uma mensagem pelo formulário a seguir ou, se preferir, entre em contato diretamente pelo telefone ou e-mail</p>
-                    </div>
-                    <div class="contato-info container d-flex flex-row p-1">
-                        <i class="fa-solid fa-phone fa-lg me-2" style="color: #547cff;"></i>
-                        <p class="m-0">11 98303-2910</p>
-                    </div>
-                    <div class="contato-info container d-flex flex-row p-1">
-                        <i class="fa-solid fa-envelope fa-lg me-2" style="color: #547cff;"></i>
-                        <p class="m-0">lumcoresystem@gmail.com</p>
-                    </div>
-                </div>
-                <div id="contact-div" class="col ms-3 margin-right">
-                    <form id="contact-form">
-                        <div class="mb-3">
-                            <label class="form-label">Identificação</label>
-                            <div class="row">
-                                <div class="col-4 col-md-4 nome-input">
-                                    <input id="input-nome" type="text" class="form-control rounded-left" placeholder="Nome">
-                                </div>
-                                <div class="col-8 col-md-8 sobrenome-input">
-                                    <input id="input-sobrenome" type="text" class="form-control rounded-right" placeholder="Sobrenome">
-                                </div>
+                <img class="img-paisagem" id="img-paisagem-1" src="assets/img/backgroundpaisagem3.jpeg" alt="">
+                <img class="img-paisagem" id="img-paisagem-2" src="assets/img/backgroundpaisagem.jpg" alt="">
+            </section>
+            <section id="equipe" class="text-center d-flex flex-column justify-content-center align-items-center">
+                <h1 id="equipe-title" class="title me-auto ms-auto">Nossa Equipe</h1>
+                <div class="container-fluid mt-5">
+                    <div id="equipe-main" class="row d-flex flex-row justify-content-center">
+                        <div class="col-10 col-md-3 p-0 perfil">
+                            <img src="assets/img/fernandoperfil.jpeg" alt="" class="profile mb-3">
+                            <h5 class="mb-1">Fernando Rodrigues Pinto</h5>
+                            <p class="text-primary mb-1">Developer Frontend</p>
+                            <div class="container d-flex justify-content-center flex-row mt-1 px-0">
+                                <a href="https://www.instagram.com/fernando_rodrigues_pinto/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                                <a href="https://github.com/fernando-rodrigues-pinto" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/fernando-pinto-a8857235a/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
                             </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input id="input-email" type="email" class="form-control rounded-full" id="email" placeholder="Digite seu email">
+                        <div class="col-10 col-md-3 p-0 perfil">
+                            <img src="assets/img/ezequiel_foto.jpg" alt="" class="profile mb-3">
+                            <h5 class="mb-1">Ezequiel Melo Nogueira</h5>
+                            <p class="text-primary mb-1">Developer Backend</p>
+                            <div class="container d-flex justify-content-center flex-row mt-1 px-0">
+                                <a href="https://www.instagram.com/zeknogueira/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                                <a href="https://github.com/zeknogueira" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/zeknogueira/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                            </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="mensagem" class="form-label">Mensagem</label>
-                            <textarea id="txt-mensagem" class="form-control rounded-full" id="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-purple">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            Enviar Mensagem
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-
-        <footer class="bg-dark">
-            <div class="container">
-                <div id="footer-row" class="row">
-                    <div class="col-md">
-                        <h2 class="footer-logo">LumCore</h2>
-                        <p>Av. Salgado Filho, 3501</p>
-                        <p>Centro, Guarulhos - SP</p>
-                        <p>07115-000, Brasil</p>
-                        <p>Telefone: +55 98303 2910</p>
-                        <p>Email: <a href="mailto:lumcoresystems@gmail.com">lumcoresystems@gmail.com</a></p>
-                    </div>
-        
-                    <div class="col-md text-center mt-4 d-flex flex-column align-items-center justify-content-center w-75">
-                        <h5>Receba nossas notícias!</h5>
-                        <p class="subscribe">Inscreva seu email e receba novidades exclusivas, incluindo promoções e
-                            eventos da empresa!</p>
-                        <div class="subscribe mt-4">
-                            <form id="subscribe-form" class="input-group">
-                                <input id="subscribe-email"type="email" class="form-control pb-2" placeholder="Seu e-mail">
-                                <button type="submit" class="btn btn-purple">Inscreva-se</button>
-                            </form>
+                        <div class="col-10 col-md-3 p-0 perfil">
+                            <img src="assets/img/araujoperfil.jpeg" alt="" class="profile mb-3">
+                            <h5 class="mb-1">Leonardo Araujo Fernandes</h5>
+                            <p class="text-primary mb-1">Developer Backend</p>
+                            <div class="container d-flex justify-content-center flex-row mt-1 px-0">
+                                <a href="https://www.instagram.com/leoaraujofernandes/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                                <a href="https://github.com/araujo-leo" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/leonardoaraujofernandes/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                            </div>
                         </div>
                     </div>
-
-                    <div id="footer-links" class="col-md text-end">
-                        <h5>Links Importantes</h5>
-                        <p><a href="#home">Home</a></p>
-                        <p><a href="#sobre">Sobre</a></p>
-                        <p><a href="#equipe">Equipe</a></p>
-                        <p><a href="#servicos">Serviços</a></p>
-                        <p><a href="#contato">Contato</a></p>
+                </div>
+            </section>
+            <section id="servicos" class="text-center d-flex flex-column justify-content-center align-items-center">
+                <h1 id="servicos-title" class="title">Serviços</h1>
+                <p id="servicos-text" class="w-50">Ao nos contratar, você conta com uma equipe comprometida em entregar soluções sob medida, exatamente como foi solicitado. Nossos diferenciais estão na aplicação de metodologias ágeis como XP e SCRUM, que garantem eficiência, transparência e entregas contínuas.</p>
+                <div class="row px-1 mx-1 d-flex justify-content-center">
+                    <div class="servico-info col-12 col-md-5 d-flex flex-column align-items-center mt-4 mb-5">
+                        <h2 class="text-primary my-0">Websites Personalizados</h2>
+                        <i class="fa-solid fa-globe fa-5x my-3"></i>
+                        <p class="w-50">Desenvolvemos sites modernos, responsivos e otimizados, adaptados às necessidades do
+                            seu negócio.</p>
+                    </div>
+                    <div class="servico-info col-12 col-md-5 d-flex flex-column align-items-center mt-4 mb-5">
+                        <h2 class="text-primary my-0">Sistemas de Gestão</h2>
+                        <i class="fa-solid fa-laptop-code fa-5x my-3"></i>
+                        <p class="w-50">Criamos sistemas para automatizar processos, aumentar a eficiência e facilitar a
+                            gestão da sua empresa.</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col text-center">
-                        <p class="mt-3">&copy; 2025 Lumcore Systems. Todos os direitos reservados.</p>
+                <div class="container-fluid mt-3 custom-bg d-flex flex-column align-items-center">
+                    <h1 class="mb-4">Atendemos suas necessidades?</h1>
+                    <a href="#contato" class="sobre-btn transparent-btn no-underline border border-2 py-2 px-5 text-white">
+                        ENTRE EM CONTATO
+                    </a>
+                </div>
+            </section>
+            <section id="contato" class="d-flex align-items-center">
+                <div id="form-div" class="row mx-0 px-0 d-flex justify-content-center align-items-center">
+                    <div id="contato-main" class="col me-3 margin-left">
+                        <div id="contato-text" class="">
+                            <h1 class="title">Nos Contate</h1>
+                            <p class="w-75">Fale conosco! Envie uma mensagem pelo formulário a seguir ou, se preferir, entre em contato diretamente pelo telefone ou e-mail</p>
+                        </div>
+                        <div class="contato-info container d-flex flex-row p-1">
+                            <i class="fa-solid fa-phone fa-lg me-2" style="color: #547cff;"></i>
+                            <p class="m-0">11 98303-2910</p>
+                        </div>
+                        <div class="contato-info container d-flex flex-row p-1">
+                            <i class="fa-solid fa-envelope fa-lg me-2" style="color: #547cff;"></i>
+                            <p class="m-0">lumcoresystem@gmail.com</p>
+                        </div>
+                    </div>
+                    <div id="contact-div" class="col ms-3 margin-right">
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label class="form-label">Identificação</label>
+                                <div class="row">
+                                    <div class="col-4 col-md-4 nome-input">
+                                        <input id="input-nome" type="text" class="form-control rounded-left" placeholder="Nome">
+                                    </div>
+                                    <div class="col-8 col-md-8 sobrenome-input">
+                                        <input id="input-sobrenome" type="text" class="form-control rounded-right" placeholder="Sobrenome">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="input-email" type="email" class="form-control rounded-full" id="email" placeholder="Digite seu email">
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">Mensagem</label>
+                                <textarea id="txt-mensagem" class="form-control rounded-full" id="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+                            </div>
+    
+                            <button type="submit" class="btn btn-purple">
+                                <i class="fa-solid fa-arrow-right"></i>
+                                Enviar Mensagem
+                            </button>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </footer>
-    </class>
+            </section>
+    
+    
+            <footer class="bg-dark">
+                <div class="container">
+                    <div id="footer-row" class="row">
+                        <div class="col-md">
+                            <h2 class="footer-logo">LumCore</h2>
+                            <p>Av. Salgado Filho, 3501</p>
+                            <p>Centro, Guarulhos - SP</p>
+                            <p>07115-000, Brasil</p>
+                            <p>Telefone: +55 98303 2910</p>
+                            <p>Email: <a href="mailto:lumcoresystems@gmail.com">lumcoresystems@gmail.com</a></p>
+                        </div>
+            
+                        <div class="col-md text-center mt-4 d-flex flex-column align-items-center justify-content-center w-75">
+                            <h5>Receba nossas notícias!</h5>
+                            <p class="subscribe">Inscreva seu email e receba novidades exclusivas, incluindo promoções e
+                                eventos da empresa!</p>
+                            <div class="subscribe mt-4">
+                                <form id="subscribe-form" class="input-group">
+                                    <input id="subscribe-email"type="email" class="form-control pb-2" placeholder="Seu e-mail">
+                                    <button type="submit" class="btn btn-purple">Inscreva-se</button>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <div id="footer-links" class="col-md text-end">
+                            <h5>Links Importantes</h5>
+                            <p><a href="#home">Home</a></p>
+                            <p><a href="#sobre">Sobre</a></p>
+                            <p><a href="#equipe">Equipe</a></p>
+                            <p><a href="#servicos">Serviços</a></p>
+                            <p><a href="#contato">Contato</a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <p class="mt-3">&copy; 2025 Lumcore Systems. Todos os direitos reservados.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </class>
+    </div>
+    
 
     <script src="assets/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
