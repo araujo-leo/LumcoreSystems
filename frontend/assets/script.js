@@ -134,6 +134,23 @@ $(document).ready(function () {
     adjustDivForMobile();
     $(window).resize(adjustDivForMobile);
 
+    // Animações de reveal
+    function RevealFunction(){
+        window.sr = ScrollReveal({duration: 900, distance: '50px', easing: 'ease-out', origin:'bottom'});
+
+        sr.reveal('#sobre-main,.text-secondary,#equipe-title,#servicos-title,#servicos-text, #contato-text,#contact-div',{interval:450});
+        sr.reveal('.mvv',{interval:350,distance:'100px',delay:750});
+        sr.reveal('.img-paisagem',{interval:350,origin:'right'});
+
+        sr.reveal('.perfil',{interval:350,distance:'100px',delay:750});
+
+        sr.reveal('.servico-info',{distance:'100px',delay:750});
+        
+        sr.reveal('.contato-info',{interval:350,delay:450});
+    }
+
+    RevealFunction()
+
     let inputNome = $('#input-nome');
     let inputSobrenome = $('#input-sobrenome');
     let text = '';
@@ -155,7 +172,7 @@ $(document).ready(function () {
         }
     })
 
-    //contact
+    // Contato
     const contactForm = $('#contact-form');
     const submitButton = contactForm.find('button[type="submit"]');
 
@@ -252,21 +269,7 @@ $(document).ready(function () {
 
     };
 
-    function RevealFunction(){
-        window.sr = ScrollReveal({duration: 900, distance: '50px', easing: 'ease-out', origin:'bottom'});
 
-        sr.reveal('#sobre-main,.text-secondary,#equipe-title,#servicos-title,#servicos-text, #contato-text,#contact-div',{interval:450});
-        sr.reveal('.mvv',{interval:350,distance:'100px',delay:750});
-        sr.reveal('.img-paisagem',{interval:350,origin:'right'});
-
-        sr.reveal('.perfil',{interval:350,distance:'100px',delay:750});
-
-        sr.reveal('.servico-info',{distance:'100px',delay:750});
-        
-        sr.reveal('.contato-info',{interval:350,delay:450});
-    }
-
-    RevealFunction()
     //subscribe
     const subscribeForm= $('#subscribe-form');
     const submitSubscribeButton = subscribeForm.find('button[type="submit"]');
