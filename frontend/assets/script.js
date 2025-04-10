@@ -1,14 +1,14 @@
 $(document).ready(function () {
     const scrollTop = $(window).scrollTop();
 
-    // Começa com scroll travado sem remover a barra
+    // Scroll travado para carregamento de JS
     $('body').css({
         position: 'fixed',
         top: `-${scrollTop}px`,
         width: '100%'
     });
 
-    // Espera 1 segundo e então revela o site
+    // Após 1s carrega o site
     setTimeout(function () {
         $('#loading').addClass('d-none');
         $('#site-content').css('opacity', '1');
@@ -23,7 +23,7 @@ $(document).ready(function () {
     }, 1000);
 
 
-    // FUNÇÃO DE ATUALIZAR A NAVBAR AO SAIR DO HOME
+    // Atualizar navbar ao sair do home
     function updateNavbar() {
         var scrollPosition = $(window).scrollTop();
         var homeSection = $('#home').offset().top;
@@ -55,7 +55,7 @@ $(document).ready(function () {
     updateNavbar();
     $(window).on('scroll', updateNavbar);
 
-    // FUNÇÃO PARA CHECAR E ATUALIZAR SEÇÃO ATUAL DA PÁGINA
+    // Marcar seção atual na navbar
     function updateActiveSection() {
         let scrollPosition = $(window).scrollTop();
         let offset = $(window).height() / 3; // Ajuste para ativar antes da seção ocupar a tela inteira
@@ -75,7 +75,7 @@ $(document).ready(function () {
     updateActiveSection();
     $(window).on('scroll', updateActiveSection);
 
-    // RESPONSIVIDADE
+    // Responsividade
     function adjustDivForMobile() {
         if ($(window).width() < 850) { 
             $('.servico-info').removeClass('col-md-5').addClass('col-md-6')
@@ -91,42 +91,92 @@ $(document).ready(function () {
 
         }
         if ($(window).width() < 1024) { 
+            // Ocultar elementos
             $('.ocultar-mobile').removeClass('d-flex').hide();
-            $('#sobre-main').removeClass('ms-5 px-5').addClass('text-center d-flex flex-column justify-content-center align-items-center');
-            $('.text-secondary').removeClass('ms-5 px-5').addClass('text-center');
+            $('#footer-links, .img-sobre').hide();
+
+            // Mostrar elementos
+            $('.img-sobre-mobile, #logo-central-mobile').show();
+
+            // SOBRE
+            $('#sobre-main')
+            .removeClass('ms-5 px-5')
+            .addClass('text-center d-flex flex-column justify-content-center align-items-center');
+
+            $('.text-secondary')
+            .removeClass('ms-5 px-5')
+            .addClass('text-center');
+
             $('#sobre').addClass('align-items-center');
-            $('#mvv').removeClass('flex-row').addClass('flex-column align-items-center');
-            $('#mvv-div').removeClass('row').addClass('d-flex flex-column align-items-center');
-            $('#contato-main').removeClass('me-3 margin-left').addClass('text-center d-flex flex-column justify-content-center align-items-center');
+
+            // MVV
+            $('#mvv')
+            .removeClass('flex-row')
+            .addClass('flex-column align-items-center');
+
+            $('#mvv-div')
+            .removeClass('row')
+            .addClass('d-flex flex-column align-items-center');
+
+            // CONTATO
+            $('#contato-main')
+            .removeClass('me-3 margin-left')
+            .addClass('text-center d-flex flex-column justify-content-center align-items-center');
+
             $('.contato-info').addClass('justify-content-center');
-            $('#form-div').removeClass('ms-3 margin-right').addClass('d-flex flex-column justify-content-center align-items-center');
+
+            $('#form-div')
+            .removeClass('ms-3 margin-right')
+            .addClass('d-flex flex-column justify-content-center align-items-center');
+
             $('#contact-div').removeClass('ms-3 margin-right');
-            $('#contato-text').addClass('d-flex flex-column align-items-center');
-            $('#footer-row').addClass('d-flex flex-column align-items-center');
 
-            $('#footer-links').hide();
-            $('.img-sobre').hide();
-            $('.img-sobre-mobile').show();
-            $('#logo-central-mobile').show();
+            $('#contato-text, #footer-row')
+            .addClass('d-flex flex-column align-items-center');
+
         } else {
+            // Mostrar elementos
             $('.ocultar-mobile').addClass('d-flex').show();
-            $('#sobre-main').addClass('ms-5 px-5').removeClass('text-center d-flex flex-column justify-content-center align-items-center');
-            $('.text-secondary').addClass('ms-5 px-5').removeClass('text-center');
+            $('#footer-links, .img-sobre').show();
+
+            // Ocultar elementos
+            $('.img-sobre-mobile, #logo-central-mobile').hide();
+
+            // SOBRE
+            $('#sobre-main')
+            .addClass('ms-5 px-5')
+            .removeClass('text-center d-flex flex-column justify-content-center align-items-center');
+
+            $('.text-secondary')
+            .addClass('ms-5 px-5')
+            .removeClass('text-center');
+
             $('#sobre').removeClass('align-items-center');
-            $('#mvv').addClass('flex-row').removeClass('flex-column align-items-center');
-            $('#mvv-div').addClass('row').removeClass('d-flex flex-column align-items-center');
-            $('#contato-main').addClass('me-3 margin-left').removeClass('text-center d-flex flex-column justify-content-center align-items-center');
+
+            // MVV
+            $('#mvv')
+            .addClass('flex-row')
+            .removeClass('flex-column align-items-center');
+
+            $('#mvv-div')
+            .addClass('row')
+            .removeClass('d-flex flex-column align-items-center');
+
+            // CONTATO
+            $('#contato-main')
+            .addClass('me-3 margin-left')
+            .removeClass('text-center d-flex flex-column justify-content-center align-items-center');
+
             $('.contato-info').removeClass('justify-content-center');
-            $('#form-div').addClass('ms-3 margin-right').removeClass('d-flex flex-column justify-content-center align-items-center');
+
+            $('#form-div')
+            .addClass('ms-3 margin-right')
+            .removeClass('d-flex flex-column justify-content-center align-items-center');
+
             $('#contact-div').addClass('ms-3 margin-right');
-            $('#contato-text').removeClass('d-flex flex-column align-items-center');
-            $('#footer-row').removeClass('d-flex flex-column align-items-center');
 
-
-            $('#footer-links').show();
-            $('.img-sobre').show();
-            $('.img-sobre-mobile').hide();
-            $('#logo-central-mobile').hide();
+            $('#contato-text, #footer-row')
+            .removeClass('d-flex flex-column align-items-center');
         }
     }
 
@@ -155,6 +205,7 @@ $(document).ready(function () {
     let inputSobrenome = $('#input-sobrenome');
     let text = '';
 
+    // Se usuário dá espaço no nome, avança para sobrenome
     inputNome.keydown(function (event) {
         inputNome.val(inputNome.val().replace(/\s/g, ""));
         if (event.key === " ") {
@@ -163,16 +214,17 @@ $(document).ready(function () {
         }
     });
 
-    //Se usuário apaga todo o sobrenome volta pro nome
+    // Se usuário apaga todo o sobrenom,e volta pro nome
     inputSobrenome.keydown(function (event) {
         if (event.key === "Backspace") {
             if (inputSobrenome.val() === "") {
                 inputNome.focus();
+                event.preventDefault(); 
             }
         }
     })
 
-    // Contato
+    // Seção de Contato
     const contactForm = $('#contact-form');
     const submitButton = contactForm.find('button[type="submit"]');
 
@@ -219,7 +271,7 @@ $(document).ready(function () {
 
     });
 
-    //unsubscribe
+    // Unsubscribe
     function getUrlParameter(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name);
