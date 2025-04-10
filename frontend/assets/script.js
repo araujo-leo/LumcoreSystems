@@ -105,8 +105,8 @@ $(document).ready(function () {
             $('#footer-row').addClass('d-flex flex-column align-items-center');
 
             $('#footer-links').hide();
-            $('.img-paisagem').hide();
-            $('.img-paisagem-mobile').show();
+            $('.img-sobre').hide();
+            $('.img-sobre-mobile').show();
             $('#logo-central-mobile').show();
         } else {
             $('.ocultar-mobile').addClass('d-flex').show();
@@ -124,8 +124,8 @@ $(document).ready(function () {
 
 
             $('#footer-links').show();
-            $('.img-paisagem').show();
-            $('.img-paisagem-mobile').hide();
+            $('.img-sobre').show();
+            $('.img-sobre-mobile').hide();
             $('#logo-central-mobile').hide();
         }
     }
@@ -140,7 +140,7 @@ $(document).ready(function () {
 
         sr.reveal('#sobre-main,.text-secondary,#equipe-title,#servicos-title,#servicos-text, #contato-text,#contact-div',{interval:450});
         sr.reveal('.mvv',{interval:350,distance:'100px',delay:750});
-        sr.reveal('.img-paisagem',{interval:350,origin:'right'});
+        sr.reveal('.img-sobre',{interval:350,origin:'right'});
 
         sr.reveal('.perfil',{interval:350,distance:'100px',delay:750});
 

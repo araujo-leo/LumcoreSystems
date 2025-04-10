@@ -263,26 +263,26 @@ a{
     transform: scaleX(1);
 }
 
-.img-paisagem{
+.img-sobre{
     position: absolute;
     border-radius: 15px;
 }
 
-.img-paisagem-mobile{
+.img-sobre-mobile{
     width: 30vh;
     height: 18vh;
     margin-top: 1rem;
     border-radius: 15px;
 }
 
-#img-paisagem-1{
+#img-sobre-1{
     left: 50%;
     top: 115%;
     width: 40vw;
     height: 20vw;
 }
 
-#img-paisagem-2{
+#img-sobre-2{
     left: 70%;
     top: 140%;
     width: 15vw;
@@ -343,7 +343,7 @@ a{
 .custom-bg {
     background: 
         linear-gradient(rgba(100, 0, 100, 0.9), rgba(75, 0, 125, 0.5)), 
-        url("img/universebackground.jpg") fixed center;
+        url("img/fundo-universo.jpg") fixed center;
     background-size: cover;
     background-position: center;
     padding: 7vh;
