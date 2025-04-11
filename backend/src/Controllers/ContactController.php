@@ -1,9 +1,8 @@
 <?php
-namespace App;
+namespace App\Controllers;
 
-use PHPMailer\PHPMailer\PHPMailer;
-
-require __DIR__ . '/../vendor/autoload.php';
+use App\Core\Database;
+use App\Core\Mailer;
 
 class ContactController
 {

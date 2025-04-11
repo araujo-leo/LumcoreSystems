@@ -1,6 +1,7 @@
 <?php
-namespace App;
-require __DIR__ . '/../vendor/autoload.php';
+namespace App\Middleware;
+use App\Core\Database;
+
 
 class AuthMiddleware
 {

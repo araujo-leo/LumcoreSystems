@@ -2,9 +2,9 @@
 
 
 require __DIR__ . '/../vendor/autoload.php';
-use App\ContactController;
-use App\NewsletterController;
-use App\AuthMiddleware;
+use App\Controllers\ContactController;
+use App\Controllers\NewsletterController;
+use App\Middleware\AuthMiddleware;
 
 
 error_reporting(E_ALL);
@@ -14,6 +14,10 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
+
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
 
 $data = json_decode(file_get_contents('php://input'), true);
@@ -37,7 +41,6 @@ switch ($_GET['route']) {
             echo json_encode(["success" => false, "message" => "E-mail inválido."]);
             exit;
         }
-
         if (!isset($data['name']) || empty(trim($data['name']))) {
             echo json_encode(["success" => false, "message" => "Nome é obrigatório."]);
             exit;

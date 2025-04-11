@@ -1,7 +1,7 @@
 <?php
-namespace App;
-
-require __DIR__ . '/../vendor/autoload.php';
+namespace App\Controllers;
+use App\Core\Database;
+use App\Core\Mailer;
 
 class NewsletterController
 {
@@ -12,7 +12,7 @@ class NewsletterController
         $this->db = new Database();
     }
 
-    public function subscribe($email, $name='')
+    public function subscribe($email, $name = '')
     {
         $conn = $this->db->getConnection();
         $email = strtolower(trim($email));
@@ -48,7 +48,7 @@ class NewsletterController
             $stmt->bindParam(':nome', $name);
             $stmt->execute();
 
-            $data = [   
+            $data = [
                 'header' => 'Novidades da nossa Newsletter',
                 'message' => 'Seja bem-vindo ao canal de notícias da Lumcore Systems.',
                 'company' => 'Lumcore Systems',
@@ -110,7 +110,7 @@ class NewsletterController
             $result = $mailer->send($row['email'], $subject, $data, $row['nome']);
 
             if ($result !== true) {
-                $errors[] = $row['email'];  
+                $errors[] = $row['email'];
             }
         }
 

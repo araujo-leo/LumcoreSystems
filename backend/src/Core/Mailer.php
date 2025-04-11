@@ -1,8 +1,6 @@
 <?php
 
-namespace App;
-
-require __DIR__ . '/../vendor/autoload.php';
+namespace App\Core;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -21,25 +19,28 @@ class Mailer
     private function config()
     {
         // Carregar as variáveis do .env
-        $dotenv = parse_ini_file(__DIR__ . '/../.env');
 
         // Configurações do servidor SMTP
         $this->mail->isSMTP();
-        $this->mail->Host = $dotenv['SMTP_HOST'];
+        $this->mail->Host = $_ENV['SMTP_HOST'] ?? '';
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = $dotenv['SMTP_USER'];
-        $this->mail->Password = $dotenv['SMTP_PASS'];
-        $this->mail->SMTPSecure = $dotenv['SMTP_SECURE'];
-        $this->mail->Port = $dotenv['SMTP_PORT'];
+        $this->mail->Username = $_ENV['SMTP_USER'] ?? '';
 
-        $this->mail->setFrom($dotenv['EMAIL_FROM'], $dotenv['EMAIL_FROM_NAME']);
+        $this->mail->Password= $_ENV['SMTP_PASS'] ?? '';
+
+        $this->mail->SMTPSecure = $_ENV['SMTP_SECURE'] ?? '';
+
+        $this->mail->Port = $_ENV['SMTP_PORT'] ?? '';
+
+
+        $this->mail->setFrom($_ENV['EMAIL_FROM'], $_ENV['EMAIL_FROM_NAME']);
         $this->mail->isHTML(true);
     }
 
     public function send($to, $subject, $data, $name = '')
     {
         try {
-            $template = file_get_contents(__DIR__ . '/views/emails/subscribe.html');
+            $template = file_get_contents(__DIR__ . '/../views/emails/subscribe.html');
 
             $template = str_replace("{{name}}", $name, $template);
 
