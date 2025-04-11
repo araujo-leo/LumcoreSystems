@@ -129,5 +129,4 @@ Authorization: Bearer SEU_TOKEN_AQUI
 - Certifique-se de enviar as requisições com o `Content-Type: application/json`.
 - Para requisições autenticadas, envie o token no header `Authorization`.
 
-Caso tenha dúvidas ou precise de melhorias, entre em contato!
 
