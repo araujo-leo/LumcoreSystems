@@ -1,6 +1,6 @@
 # Projeto Full Stack - Backend em PHP e Frontend em HTML/CSS/JS
 
-Este projeto é uma aplicação web full stack com backend em PHP e frontend em HTML, CSS e JavaScript. Utiliza bibliotecas modernas como jQuery, Bootstrap e ScrollReveal.
+Este projeto é uma aplicação web full stack com backend em PHP e frontend em HTML, CSS e JavaScript. Utiliza bibliotecas como jQuery, Bootstrap e ScrollReveal.
 
 ## 📁 Estrutura de Pastas
 
